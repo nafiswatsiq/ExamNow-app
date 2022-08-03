@@ -1,0 +1,146 @@
+.dahsboard.teacher{
+  .sidebar{
+    background: var(--white);
+
+    a{
+      color: #aaaaaa;
+    }
+
+    a:hover {
+      -webkit-transform: translateX(5px);
+              transform: translateX(5px);
+      -webkit-transition: all 200ms;
+      transition: all 200ms;
+      color: var(--black);
+    }
+
+    .active {
+      font-weight: 700 !important;
+      color: var(--black);
+    }
+  }
+
+  .content {
+    background: #FAFAFA;
+    min-height: 100vh;
+
+    .navbar {
+      background: #FAFAFA;
+    }
+
+    .btn-add-question {
+      background: #f1f1f1;
+    }
+
+    .btn-add-question:hover {
+      border: 1px solid #c9c9c9;
+    }
+
+    .list-question {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .list-question:hover {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02);
+      -webkit-transition: all 200ms;
+      transition: all 200ms;
+    }
+
+    .list-question::before {
+      content: url("../image/pencil.png");
+      position: absolute;
+      top: 0;
+      right: -9rem;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: var(--thrid-bg);
+      -webkit-clip-path: circle(50% at 50% 50%);
+              clip-path: circle(50% at 50% 50%);
+    }
+
+    #question {
+
+      .list-option{
+        list-style-type: upper-alpha;
+
+        .uil-image-plus{
+          display: none;
+        }
+        .uil-multiply{
+          display: none;
+        }
+        label{
+          color: #aaaaaa;
+        }
+        input[type="radio"]{
+          visibility: hidden;
+        }
+        input[type="radio"]:checked + label i::before{
+          color: #08b33b;
+          background: #d8ffe4;
+          border-radius: 5px;
+        }
+      }
+      .option{
+        border: none;
+        outline: none;
+        padding: 0 10px;
+        width: 100%;
+      }
+
+      .btn-add-option{
+        display: none;
+      }
+
+      textarea{
+        width: 100%;
+        border: none;
+      }
+
+      .focus {
+        li{
+          padding: 10px 0;
+        }
+        .option{
+          border: 1px solid rgb(207, 207, 207);
+          outline: none;
+          padding: 4px 10px;
+          border-radius: 5px;
+        }
+
+        .btn-add-option{
+          display: block;
+        }
+
+        .uil-trash-alt{
+          visibility: visible;
+        }
+
+        .list-option{
+          list-style-type: upper-alpha;
+  
+          .uil-image-plus{
+            display: block;
+          }
+          .uil-multiply{
+            display: block;
+          }
+        }
+      }
+    }
+
+    .dot-create-question::before{
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--second-bg);
+      position: absolute;
+      right: -8px;
+      border-radius: 50%;
+    }
+  }
+}

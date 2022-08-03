@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Exam\ExamController;
+use App\Http\Controllers\PageController\AuthController;
+use App\Http\Controllers\PageController\LandingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/login', function () {
+//     return view('auth.login');
+// });
+// Route::get('/register', function () {
+//     return view('auth.login');
+// });
+
+Route::get('/', [LandingController::class, 'home'])->name('home');
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::get('/register', 'register')->name('register');
+});
+
+
+Route::prefix('exam')->group(function () {
+    Route::controller(ExamController::class)->group(function () {
+        Route::get('/', 'home')->name('home');
+        Route::get('/ujian', 'exam')->name('exam');
+        Route::get('/ujicoba', 'ujicoba')->name('ujicoba');
+        Route::get('/selesai', 'finish')->name('finish');
+    });
 });

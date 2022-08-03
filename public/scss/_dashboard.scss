@@ -1,0 +1,49 @@
+.dahsboard{
+  padding: 0;
+  margin: 0;
+
+  .sidebar{
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    background-color: var(--second-bg);
+
+    .avatar{
+      width: 55px;
+      height: 55px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    a{
+      color: rgb(226, 226, 226);
+    }
+
+    a:hover{
+      transform: translateX(5px);
+      transition: all 200ms;
+      color: var(--white);
+    }
+
+    .active{
+      font-weight: 700 !important;
+      color: var(--white);
+    }
+  }
+
+  .content{
+    margin-left: 260px;
+
+    .navbar{
+      background: var(--white);
+    }
+  }
+}

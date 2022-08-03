@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: 'Nunito', sans-serif;
+}
+:root{
+  // --main-bg: #7176FF;
+  // --second-bg: #71BEFF;
+  --hue-color: 230;
+  --main-bg: #5350ff;
+  --second-bg: #43a1ff;
+  --thrid-bg: #f2f8ff;
+  --fourth-bg: #5daeff;
+  --white: #ffffff;
+  --black: rgb(46, 46, 46);
+  --gray-300: rgb(224, 224, 224);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --scroll-thumb-color-hover: hsl(var(--hue-color), 21%, 78%);
+}
+
+::-webkit-scrollbar {
+  width: .60rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-color-hover);
+}
+
+body{
+  --keyboard-zindex: 3000;
+}
+a{
+  text-decoration: none;
+}
+.bg-main{
+  background-color: var(--main-bg);
+}
+.bg-second{
+  background-color: var(--second-bg);
+}
+.bg-second:focus{
+  background-color: var(--second-bg);
+}
+.bg-second-hover:hover{
+  background-color: var(--second-bg) !important;
+  color: var(--white) !important;
+}
+.bg-white{
+  background-color: var(--white);
+}
+.bg-gradient{
+  background: linear-gradient(to right, var(--main-bg), var(--second-bg)) !important;
+}
+.bg-thrid{
+  background-color: var(--thrid-bg);
+}
+.bg-fourth{
+  background-color: var(--fourth-bg);
+}
+.main-color{
+  color: var(--main-bg);
+}
+.second-color{
+  color: var(--second-bg);
+}
+.gray-300{
+  color: var(--gray-300);
+}
+.white-color{
+  color: var(--white);
+}
+.white-hover:hover{
+  color: var(--white) !important;
+  border: 1px solid var(--white) !important;
+}
+.fw-700{
+  font-weight: 700;
+}
+.fw-800{
+  font-weight: 800;
+}
+.fw-900{
+  font-weight: 900;
+}
+.fs-50{
+  font-size: 50px;
+}
+.fs-55{
+  font-size: 55px;
+}
+.fs-6{
+  font-size: 14px;
+}
+.fs-7{
+  font-size: 12px;
+}
+.border-white{
+  border-color: var(--white);
+}
+.border-main{
+  border-color: var(--main-bg);
+}
+.border-second{
+  border-color: var(--secon-bg);
+}
+.border-second-hover:hover{
+  border: 1px solid var(--second-bg);
+  color: var(--second-bg);
+}
+.text-hover:hover{
+  color: var(--second-bg) !important;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.15rem #8e8ea950;
+          box-shadow: 0 0 0 0.15rem #8e8ea950;
+}
+
+.form-control:focus + .form-control,
+.form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0rem #8e8ea950;
+          box-shadow: 0 0 0 0rem #8e8ea950;
+  border-color: #bbbbbb;
+}
+
+.form-select:focus {
+  border-color: #bbbbbb;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.15rem #8e8ea950;
+          box-shadow: 0 0 0 0.15rem #8e8ea950;
+}
+
+.form-check-input:focus {
+  border-color: #bbbbbb;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.15rem #8e8ea950;
+          box-shadow: 0 0 0 0.15rem #8e8ea950;
+}
+.z-2{
+  position: relative;
+  z-index: 2;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.navbar{
+  background: linear-gradient(320deg, var(--second-bg),var(--main-bg));
+
+  .list-item{
+    .nav-item{
+      display:inline-block;
+      text-decoration:none;
+      color: var(--white);
+      position:relative;
+    }
+    .nav-item::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:2px;
+      background-color:var(--white);
+      transform:scalex(0);
+      transform-origin:right;
+      transition:transform .5s;
+    }
+    .nav-item:hover::after{
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+.navbar.scrolled{
+  /* From https://css.glass */
+  background: linear-gradient(320deg,#43a1ff98, #5350ffe3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.first-section{
+  margin-top: 80px;
+}
+#section-home{
+  min-height: 100vh;
+  background: var(--thrid-bg);
+  
+  .home-wrap{
+    height: 100vh;
+
+    .btn:hover{
+      transform: scale(1.04);
+      transition: all ease 200ms;
+    }
+  }
+}
+
+.scrollup {
+  position: fixed;
+  right: 2rem;
+  bottom: -20%;
+  background-color: var(--main-bg);
+  opacity: 0.8;
+  padding: 0 .3rem;
+  border-radius: .4rem;
+  z-index: 9;
+  transition: .4s;
+}
+
+.scroll__icon {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.show-scroll {
+  bottom: 4rem;
+}
+
+#auth{
+  background: var(--fourth-bg);
+}
+.auth-wrapper{
+  
+  .left-login{
+    min-height: 100vh
+  }
+  .right-login{
+    min-height: 100vh;
+    // background: linear-gradient(to left, var(--second-bg), var(--second-bg))
+  }
+
+  form.register{
+    max-width: 500px;
+  }
+
+}
+
+.dtpicker-mobile .dtpicker-content {
+  border-radius: 10px
+}
+
+.dtpicker-header .dtpicker-value {
+  color: var(--main-bg);
+}
+.dtpicker-header .dtpicker-close {
+  color: var(--main-bg);
+}
+.dtpicker-buttonCont .dtpicker-button {
+  border-radius: 10px;
+  background: var(--second-bg);
+}
+
+.login-section{
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  width: 50%;
+  background: var(--white);
+  transform: translateX(0);
+}
+.login-section.left{
+  transform: translateX(100%);
+  transition: 500ms;
+}
+.login-section.right{
+  transform: translateX(0);
+  transition: 500ms;
+}
+
+.custom-shape-divider-bottom-1657246973 {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1657246973 svg {
+  position: relative;
+  display: block;
+  width: calc(241% + 1.3px);
+  height: 194px;
+}
+
+.custom-shape-divider-bottom-1657246973 .shape-fill {
+  fill: #FFFFFF;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@import "exam-style";
+@import "dashboard";
+@import "dashboard-teacher";
+@import "responsive";

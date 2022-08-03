@@ -1,0 +1,44 @@
+@media screen and (max-width: 1024px) {
+  .auth-wrapper{
+
+    form.register{
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth-wrapper{
+
+    form.register{
+      max-width: 300px;
+    }
+  }
+
+}
+@media screen and (max-width: 600px) {
+  .fs-50{
+    font-size: 30px;
+  }
+
+  .form-login{
+    flex-direction: column;
+  }
+
+  .auth-wrapper{
+    .right-login{
+      .box-login{
+        margin-top: 5rem;
+      }
+    }
+
+    form.register{
+      max-width: 300px;
+    }
+  
+  }
+  .timer-exam{
+    top: 15px;
+    padding: 5px 10px;
+  }
+}
