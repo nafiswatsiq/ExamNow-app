@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Dashboard\StudentController;
+use App\Http\Controllers\Dashboard\TeacherController;
 use App\Http\Controllers\Exam\ExamController;
 use App\Http\Controllers\PageController\AuthController;
 use App\Http\Controllers\PageController\LandingController;
@@ -37,5 +39,21 @@ Route::prefix('exam')->group(function () {
         Route::get('/ujian', 'exam')->name('exam');
         Route::get('/ujicoba', 'ujicoba')->name('ujicoba');
         Route::get('/selesai', 'finish')->name('finish');
+    });
+});
+
+Route::prefix('student')->group(function () {
+    Route::controller(StudentController::class)->group(function () {
+        Route::get('/', 'index')->name('home');
+        // Route::get('/register', 'register')->name('register');
+    });
+});
+
+Route::prefix('teacher')->group(function () {
+    Route::controller(TeacherController::class)->group(function () {
+        Route::get('/', 'index')->name('teacher.home');
+        Route::get('/exam', 'exam')->name('teacher.exam');
+        Route::get('/create-question', 'createQuestion')->name('teacher.create-question');
+        Route::get('/create-question-detail', 'createQuestionDetail')->name('teacher.create-question-detail');
     });
 });

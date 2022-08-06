@@ -2,6 +2,7 @@ function resetOption(el) {
   const getOption = jQuery(el).closest("li").find(".input-option input");
   const getMathField = jQuery(el).closest("li").find(".input-option math-field");
   const getIcon = jQuery(el).closest("li").find("i.toogleImage");
+  const getTrueOption = jQuery(el).closest("li").find("input[type='radio']");
 
   getOption.attr({
     type: "text",
@@ -9,6 +10,7 @@ function resetOption(el) {
   });
 
   getOption.val("");
+  getTrueOption.prop('checked', false);
   getMathField.css("display", "none");
   getIcon.removeClass("uil-text-fields").addClass("uil-image-plus");
 }

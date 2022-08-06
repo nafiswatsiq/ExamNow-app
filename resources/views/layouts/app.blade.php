@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -49,7 +49,7 @@
   @yield('content')
 
   <footer>
-    <div class="container pb-4 pt-5 {{ Route::current()->getName() == 'login' || 'register' ? 'd-none' : '' }}">
+    <div class="container pb-4 pt-5 {{ (Route::current()->getName() == 'login') ? 'd-none' : (Route::current()->getName() == 'register') ? 'd-none' : '' }}">
       <div class="row border-bottom py-3">
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Syarat dan Ketentuan</a>
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Kebijakan Privasi</a>

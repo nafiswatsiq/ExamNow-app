@@ -36,18 +36,18 @@
 
   <footer>
     <div class="container pb-4 pt-5">
-      <div class="row border-bottom py-3">
+      {{-- <div class="row border-bottom py-3">
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Syarat dan Ketentuan</a>
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Kebijakan Privasi</a>
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Bantuan</a>
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Hubungi kami</a>
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Kritik & saran</a>
-      </div>
+      </div> --}}
       <div class="d-flex flex-md-row flex-column-reverse justify-content-between pt-3 gap-2">
         <p class="col-auto text-black-50 fw-semibold">
           Copyright &copy; nw.project 2022 | All right reserved
         </p>
-        <div class="col-auto">
+        {{-- <div class="col-auto">
           <div class="row">
             <div class="col-auto">
               <a href="#" class="text-black-50 text-decoration-none fw-semibold text-hover"><i class="uil uil-facebook"></i> Facebook</a>
@@ -59,7 +59,7 @@
               <a href="#" class="text-black-50 text-decoration-none fw-semibold text-hover"><i class="uil uil-github-alt"></i> Github</a>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </footer>
