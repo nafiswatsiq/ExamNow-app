@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg" id="header">
   <div class="container-fluid py-2 px-5">
     <div class="d-flex align-items-center">
-      <a href="#" class="btn btn-outline-secondary rounded-pill" style="padding: 5px;"><i class="uil uil-arrow-left fs-5"></i></a>
+      <a href="{{ url()->previous() }}" class="btn btn-outline-secondary rounded-pill" style="padding: 5px;"><i class="uil uil-arrow-left fs-5"></i></a>
       <span class="navbar-brand fw-800 fs-4 text-black-50 ms-3">Detail Ujian</span>
     </div>
   </div>

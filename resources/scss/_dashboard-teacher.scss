@@ -142,5 +142,23 @@
       right: -8px;
       border-radius: 50%;
     }
+
+    .list-exam{
+
+      td{
+        padding: 12px 8px;
+        a{
+          width: 100%;
+          color: var(--second-bg);
+          font-weight: 600;
+        }
+      }
+      
+    }
+    .active>.page-link, .page-link.active {
+      z-index: 3;
+      background-color: var(--second-bg);
+      border-color: var(--second-bg);
+    }
   }
 }

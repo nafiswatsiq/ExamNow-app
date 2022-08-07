@@ -680,6 +680,19 @@ body.dark-theme .offcanvas .answer-num.answered {
   right: -8px;
   border-radius: 50%;
 }
+.dahsboard.teacher .content .list-exam td {
+  padding: 12px 8px;
+}
+.dahsboard.teacher .content .list-exam td a {
+  width: 100%;
+  color: var(--second-bg);
+  font-weight: 600;
+}
+.dahsboard.teacher .content .active > .page-link, .dahsboard.teacher .content .page-link.active {
+  z-index: 3;
+  background-color: var(--second-bg);
+  border-color: var(--second-bg);
+}
 
 @media screen and (max-width: 1024px) {
   .auth-wrapper form.register {
