@@ -52,7 +52,10 @@ Route::prefix('student')->group(function () {
 Route::prefix('teacher')->group(function () {
     Route::controller(TeacherController::class)->group(function () {
         Route::get('/', 'index')->name('teacher.home');
+        Route::get('/class', 'coridorClass')->name('teacher.coridor-class');
+        Route::get('/class/{class}', 'class')->name('class');
         Route::get('/exam', 'exam')->name('teacher.exam');
+        Route::get('/teacher', 'teacher')->name('teacher.teacher');
         Route::get('/create-question', 'createQuestion')->name('teacher.create-question');
         Route::get('/create-question-detail', 'createQuestionDetail')->name('teacher.create-question-detail');
     });

@@ -160,5 +160,52 @@
       background-color: var(--second-bg);
       border-color: var(--second-bg);
     }
+  .card-class{
+    overflow: hidden;
+    height: 150px;
+    transition: all 200ms;
+  }
+  .card-class:hover{
+    transform: scale(1.03);
+    transition: all 200ms;
+  }
+  .card-class::before{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: var(--second-bg);
+    font-family: unicons-line;
+    content: '\eca5';
+    background: #71bfff54;
+    // width: 150px;
+    // height: 150px;
+    padding: 50px 55px 20px 40px;
+    border-radius: 100%;
+    position: absolute;
+    top: -40;
+    right: -30;
+  }
+  // .card-class:hover::before{
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   font-size: 12px;
+  //   color: var(--second-bg);
+  //   font-family: unicons-line;
+  //   content: '\eca5';
+  //   background: #71bfff54;
+  //   width: 150px;
+  //   height: 150px;
+  //   // padding: 50px 55px 20px 40px;
+  //   border-radius: 100%;
+  //   position: absolute;
+  //   top: -100;
+  //   right: -30;
+  //   transform: scale(5);
+  //   transition: 200ms;
+  //   transition-timing-function: linear;
+  // }
+  // type here
   }
 }

@@ -17,6 +17,24 @@ class TeacherController extends Controller
         return view('dashboard.teacher.home');
     }
 
+    // Class
+    public function coridorClass()
+    {
+        return view('dashboard.teacher.coridor-class');
+    }
+    public function class($class)
+    {
+        $class;
+        return view('dashboard.teacher.class', compact('class'));
+    }
+
+    // Teacher
+    public function teacher()
+    {
+        return view('dashboard.teacher.teacher');
+    }
+
+    // Exam
     public function exam()
     {
         return view('dashboard.teacher.exam');

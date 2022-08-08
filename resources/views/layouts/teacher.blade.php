@@ -35,17 +35,22 @@
         <div class="py-5 border-bottom">
           <div>
             <a href="{{ route('teacher.home') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'teacher.home' ? 'active' : '' }}">
-              <i class="uil uil-dashboard me-2 fs-4"></i> Dashboard
+              <i class="uil uil-estate me-2 fs-4"></i> Home
             </a>
           </div>
           <div class="mt-4">
-            <a href="#" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'class' ? 'active' : '' }}">
-              <i class="uil uil-estate me-2 fs-4"></i> Kelas
+            <a href="{{ route('teacher.coridor-class') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'teacher.coridor-class' ? 'active' : '' }}">
+              <i class="uil uil-notebooks me-2 fs-4"></i> Kelas
             </a>
           </div>
           <div class="mt-4">
             <a href="{{ route('teacher.exam') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'teacher.exam' ? 'active' : '' }}">
               <i class="uil uil-clipboard-alt me-2 fs-4"></i> Ujian
+            </a>
+          </div>
+          <div class="mt-4">
+            <a href="{{ route('teacher.teacher') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'teacher.teacher' ? 'active' : '' }}">
+              <i class="uil uil-book-reader me-2 fs-4"></i> Guru
             </a>
           </div>
         </div>

@@ -1,8 +1,9 @@
 @extends('layouts.teacher')
 
 @section('style')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="{{ asset('vendors/data-table/dataTables.bootstrap5.min.css') }}">
 @endsection
+
 @section('content')
 <nav class="navbar navbar-expand-lg" id="header">
   <div class="container-fluid py-2 px-5">
@@ -158,8 +159,8 @@
 
 @section('js')
   <script src="{{ asset('js/tooltips.js') }}"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <script src="{{ asset('vendors/data-table/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('vendors/data-table/dataTables.bootstrap5.min.js') }}"></script>
   <script>
     $(document).ready(function () {
       $('#listExam').DataTable();
