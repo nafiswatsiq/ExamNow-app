@@ -187,6 +187,7 @@ a {
   text-decoration: none;
   color: var(--white);
   position: relative;
+  margin: 0 10px;
 }
 .navbar .list-item .nav-item::after {
   content: "";
@@ -260,6 +261,9 @@ a {
 }
 .auth-wrapper .right-login {
   min-height: 100vh;
+}
+.auth-wrapper .right-login .box-login {
+  width: 340px;
 }
 .auth-wrapper form.register {
   max-width: 500px;
@@ -736,7 +740,7 @@ body.dark-theme .offcanvas .answer-num.answered {
     flex-direction: column;
   }
   .auth-wrapper .right-login .box-login {
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
   .auth-wrapper form.register {
     max-width: 300px;

@@ -10,27 +10,35 @@
     <div class="row">
       <div class="col-md-6 col-12 d-none d-md-block" id="page-register">
         <div class="right-login d-flex justify-content-center align-items-md-center">
-          <div class="box-login">
+          <div class="">
             <div class="row">
-              <div class="col-12 mt-5 mt-md-0">
+              <div class="col-12 mt-3 mt-md-0">
                 <p class="text-center fw-800 text-light fs-2">Register</p>
-                <form class="register">
+                <form class="register" action="{{ url('register') }}" method="POST">
+                  @csrf
                   <div class="row gy-2">
                     <div class="col-lg-6 col-12">
                       <label for="exampleInputEmail1" class="form-label text-light">Nama</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1">
+                      <input type="text" name="name" class="form-control" id="exampleInputEmail1">
                     </div>
                     <div class="col-lg-6 col-12">
                       <label for="exampleInputEmail1" class="form-label text-light">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1">
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1">
                     </div>
                     <div class="col-lg-6 col-12">
                       <label for="exampleInputEmail1" class="form-label text-light">Password</label>
-                      <input type="password" class="form-control" id="exampleInputEmail1">
+                      <input type="password" name="password" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="col-lg-6 col-12">
+                      <label for="exampleInputEmail1" class="form-label text-light">Sebagai</label>
+                      <select name="role" id="" class="form-select">
+                        <option value="teacher">Guru</option>
+                        <option value="student">Murid</option>
+                      </select>
                     </div>
                     <div class="col-lg-6 col-12">
                       <label for="exampleInputEmail1" class="form-label text-light">Tanggal Lahir</label>
-                      <input type="text" data-field="date" readonly class="form-control">
+                      <input type="text" name="date_birth" data-field="date" readonly class="form-control">
                     </div>
                   </div>
                   <div id="dtBox"></div>
@@ -48,19 +56,24 @@
       </div>
       <div class="col-md-6 col-12 d-none d-md-block" id="page-login">
         <div class="right-login d-flex justify-content-center align-items-md-center ">
-          <div class="box-login bordfer bg-white px-4 py-3 rounded-4">
-            <div class="row">
-              <div class="col-12 mt-5 mt-md-0">
+          <div class="box-login px-2">
+            <div class="row bg-white px-4 py-3 rounded-4">
+              <div class="col-12 mt-3 mt-md-0">
                 <p class="text-center fw-800 fs-2 second-color">Login</p>
-                <form>
+                <p class="text-danger form-text">{{ session('error') }}</p>
+                <form action="{{ url('login') }}" method="POST">
+                  @csrf
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label text-body fw-semibold">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text text-secondary">We'll never share your email with anyone else.</div>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ old('email') }}" autofocus>
+                    {{-- <div id="emailHelp" class="form-text text-secondary">We'll never share your email with anyone else.</div> --}}
+                    @error('email')
+                      <p class="text-danger form-text">Masukan email dengan benar</p>
+                    @enderror
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label text-body fw-semibold">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                   </div>
                   <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">

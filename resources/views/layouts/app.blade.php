@@ -32,15 +32,35 @@
             <a class="nav-link" href="#">About</a>
           </li>
         </ul>
-        <div class="d-flex flex-wrap gap-2">
-          @if (Route::current()->getName() == 'login')
-          <a href="{{ url('register') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-user"></i> Daftar</a>
-          @elseif(Route::current()->getName() == 'register')
-          <a href="{{ url('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          @auth
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-800 text-light m-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url(auth()->user()->role) }}"><i class="uil uil-apps me-2"></i> Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <form action="{{ url('logout') }}" method="post" class="m-0">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="uil uil-signout me-2"></i> Keluar</a></button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          </ul>
           @else
-          <a href="{{ url('register') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-user"></i> Daftar</a>
-          <a href="{{ url('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
-          @endif
+            @if (Route::current()->getName() == 'login')
+            <a href="{{ url('register') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-user"></i> Daftar</a>
+            @elseif(Route::current()->getName() == 'register')
+            <a href="{{ url('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
+            @else
+            <a href="{{ url('register') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-user"></i> Daftar</a>
+            <a href="{{ url('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
+            @endif
+          @endauth
         </div>
       </div>
     </div>

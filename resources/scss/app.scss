@@ -164,6 +164,7 @@ a{
       text-decoration:none;
       color: var(--white);
       position:relative;
+      margin: 0 10px;
     }
     .nav-item::after{
       content:"";
@@ -241,6 +242,9 @@ a{
   .right-login{
     min-height: 100vh;
     // background: linear-gradient(to left, var(--second-bg), var(--second-bg))
+    .box-login{
+      width: 340px;
+    }
   }
 
   form.register{
