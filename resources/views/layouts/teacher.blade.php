@@ -30,7 +30,7 @@
           <div class=" d-flex justify-content-center">
             <img src="https://ui-avatars.com/api/?name=SMPN 100 JAKARTA&background=random&color=fff&length=1" class="rounded-3" width="100px" alt="">
           </div>
-          <p class="fw-800 second-color fs-5 mb-0 mt-3">SMPN 100 JAKARTA</p>
+          <p class="fw-800 second-color fs-5 mb-0 mt-3 text-center">{{ auth()->user()->name }}</p>
         </div>
         <div class="py-5 border-bottom">
           <div>
@@ -48,13 +48,15 @@
               <i class="uil uil-clipboard-alt me-2 fs-4"></i> Ujian
             </a>
           </div>
+          @if (auth()->user()->role == 'scholl')
           <div class="mt-4">
             <a href="{{ route('teacher.teacher') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'teacher.teacher' ? 'active' : '' }}">
               <i class="uil uil-book-reader me-2 fs-4"></i> Guru
             </a>
           </div>
+          @endif
         </div>
-        <div class="border-bottom pt-4 pb-5">
+        <div class="border-bottom pt-4 pb-4">
           <p class="fs-5 text-body fw-800">Akun</p>
           <div class="">
             <div>
@@ -75,9 +77,10 @@
           </div>
         </div>
         <div class="my-3">
-          <a href="#" class="fw-500 fs-6 fw-semibold text-light d-flex align-items-center">
-            <i class="uil uil-signout me-2"></i> Keluar
-          </a>
+          <form action="{{ url('logout') }}" method="post">
+            @csrf
+            <button type="submit" class="fw-500 fs-6 fw-semibold d-flex align-items-center border-0 bg-white p-0"><i class="uil uil-signout me-2"></i> Keluar</button>
+          </form>
         </div>
       </div>
     </div>
@@ -87,6 +90,7 @@
 
     </div>
 
+    @include('sweetalert::alert')
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     

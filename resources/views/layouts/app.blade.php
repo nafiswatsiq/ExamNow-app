@@ -68,8 +68,8 @@
   
   @yield('content')
 
-  <footer>
-    <div class="container pb-4 pt-5 {{ Route::current()->getName() == 'login' ? 'd-none' : (Route::current()->getName() == 'register' ? 'd-none' : '') }}">
+  <footer class="{{ Route::current()->getName() == 'login' ? 'd-none' : (Route::current()->getName() == 'register' ? 'd-none' : (Route::current()->getName() == 'register-as' ? 'd-none' : '')) }}">
+    <div class="container pb-4 pt-5 ">
       <div class="row border-bottom py-3">
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Syarat dan Ketentuan</a>
         <a href="#" class="col-auto text-black-50 text-decoration-none fw-semibold text-hover">Kebijakan Privasi</a>

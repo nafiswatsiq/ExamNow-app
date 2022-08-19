@@ -31,7 +31,7 @@
             <table>
               <tr>
                 <td>Wali Kelas</td>
-                <td>:<span class="mx-2 fw-700">Soeharto</span></td>
+                <td>:<span class="mx-2 fw-700">{{ auth()->user()->name }}</span></td>
               </tr>
               <tr>
                 <td>Murid</td>
@@ -62,10 +62,10 @@
                       <td>AHMAD TOBIRI</td>
                       <td>Laki-laki</td>
                       <td>
-                        <button class="btn bg-second bg-second-hover text-light rounded-pill" data-bs-toggle="modal" data-bs-target="#editStudent">
+                        <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
                           <i class="uil uil-edit"></i> edit
                         </button>
-                        <button class="btn bg-danger text-light rounded-pill"><i class="uil uil-edit"></i> Hapus</button>
+                        <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
                       </td>
                   </tr>
                   <tr>
@@ -73,10 +73,10 @@
                       <td>ABDUL KASIM</td>
                       <td>Laki-laki</td>
                       <td>
-                        <button class="btn bg-second bg-second-hover text-light rounded-pill" data-bs-toggle="modal" data-bs-target="#editStudent">
+                        <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
                           <i class="uil uil-edit"></i> edit
                         </button>
-                        <button class="btn bg-danger text-light rounded-pill"><i class="uil uil-edit"></i> Hapus</button>
+                        <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
                       </td>
                   </tr>
                   <tr>
@@ -84,10 +84,10 @@
                       <td>SRI REJEKI</td>
                       <td>Perempuan</td>
                       <td>
-                        <button class="btn bg-second bg-second-hover text-light rounded-pill" data-bs-toggle="modal" data-bs-target="#editStudent">
+                        <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
                           <i class="uil uil-edit"></i> edit
                         </button>
-                        <button class="btn bg-danger text-light rounded-pill"><i class="uil uil-edit"></i> Hapus</button>
+                        <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
                       </td>
                   </tr>
               </tbody>

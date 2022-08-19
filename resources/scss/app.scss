@@ -341,6 +341,132 @@ a{
   height: 260px;
 }
 
+.register-as{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .left-bg{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .left-bg::before{
+    content: '';
+    background: var(--second-bg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 75%;
+  }
+
+  .icon{
+    width: fit-content;
+    font-size: 80px;
+    color: var(--second-bg)
+  }
+
+  .btn-card{
+    min-width: 200px;
+  }
+}
+
+.register{
+  min-height: 82vh;
+
+  #match{
+    display: none;
+  }
+
+  #match.match{
+    color: #1cc438;
+    font-weight: 800;
+    font-size: 22px;
+  }
+
+  #match.no_match{
+    color: #c41c1c;
+    font-weight: 800;
+    font-size: 22px;
+  }
+}
+
+#mediaFile {
+  position: absolute;
+  top: -1000px;
+}
+
+#profile {
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  z-index: 99;
+  background: transparent;
+  display: table;
+  background-size: cover;
+  background-position: center center;
+
+  // box-shadow: 0 5px 8px rgba(black, 0.35);
+  .dashes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      border: 4px dashed #ddd;
+      opacity: 1;
+  }
+
+  label {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 10px;
+      color: #32324D;
+      opacity: 80%;
+  }
+
+  label:hover {
+      opacity: 1;
+  }
+
+  &.dragging {
+      background-image: none !important;
+
+      .dashes {
+          animation-duration: 10s;
+          animation-name: spin;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          opacity: 1 !important;
+      }
+
+      label {
+          opacity: 0.5 !important;
+      }
+  }
+
+  &.hasImage {
+
+      .dashes {
+          opacity: 0;
+      }
+
+      label {
+          opacity: 0;
+          pointer-events: none;
+          user-select: none;
+      }
+  }
+}
+
+.dummy-img-upload {
+  width: 250px;
+  height: 250px;
+}
+
 @import "exam-style";
 @import "dashboard";
 @import "dashboard-teacher";

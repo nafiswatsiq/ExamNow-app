@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\UniqueId;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TeacherController extends Controller
 {
@@ -14,7 +18,10 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('dashboard.teacher.home');
+        $user = Auth::user();
+        $data = UniqueId::where('user_id', $user->id)->first();
+        // dd($data->user->name);
+        return view('dashboard.teacher.home', compact('user', 'data'));
     }
 
     // Class
