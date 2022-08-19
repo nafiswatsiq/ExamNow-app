@@ -93,7 +93,7 @@ class AuthController extends Controller
         $unique['unique_teacher'] = randomInt();
         $unique['unique_student'] = randomInt();
 
-        UniqueId::create($unique);
+        // UniqueId::create($unique);
 
         return redirect('/login');
     }
