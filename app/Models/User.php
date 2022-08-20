@@ -4,15 +4,16 @@ namespace App\Models;
 
 use App\Models\UniqueId;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +25,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'classroom_id',
     ];
 
     /**
@@ -45,13 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function teacher()
-    {
-        return $this->hasMany(Teacher::class);
-    }
-
     public function classroom()
     {
-        return $this->hasMany(Classroom::class);
+        return $this->belongsTo(Classroom::class);
     }
 }

@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="col-12 d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-secondary fw-800 rounded-pill px-4 mx-2">Kembali</button>
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary fw-800 rounded-pill px-4 mx-2">Kembali</a>
             <button class="btn bg-second bg-second-hover text-light fw-800 rounded-pill px-4 mx-2">Daftar</button>
           </div>
         </div>

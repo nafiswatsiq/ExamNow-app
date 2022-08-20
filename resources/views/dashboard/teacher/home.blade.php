@@ -12,10 +12,10 @@
     <div class="row">
       <div class="col-auto">
         <div class="card px-5 py-3 border-0 shadow-sm rounded-4">
-          <p class="text-secondary fw-700 m-0">Id Guru</p>
+          <p class="text-secondary fw-700 m-0">Kelas</p>
           <div>
-            <span class="m-0 fw-800 second-color fs-3">{{ $data->unique_teacher }}</span>
-            <button class="fs-3 text-black-50 border-0 bg-white ms-2 btn-copy" data-clipboard-text="{{ $data->unique_teacher }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salin">
+            <span class="m-0 fw-800 second-color fs-3">{{ $data->classroom->name }}</span>
+            <button class="fs-3 text-black-50 border-0 bg-white ms-2 btn-copy" data-clipboard-text="{{ $data->classroom->name }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salin">
               <i class="uil uil-copy"></i>
             </button>
           </div>
@@ -25,8 +25,8 @@
         <div class="card px-5 py-3 border-0 shadow-sm rounded-4">
           <p class="text-secondary fw-700 m-0">Id Kelas</p>
           <div>
-            <span class="m-0 fw-800 second-color fs-3">{{ $data->unique_student }}</span>
-            <button class="fs-3 text-black-50 border-0 bg-white ms-2 btn-copy" data-clipboard-text="{{ $data->unique_student }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salin">
+            <span class="m-0 fw-800 second-color fs-3">{{ $data->classroom->classroom }}</span>
+            <button class="fs-3 text-black-50 border-0 bg-white ms-2 btn-copy" data-clipboard-text="{{ $data->classroom->classroom }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salin">
               <i class="uil uil-copy"></i>
             </button>
           </div>
@@ -35,7 +35,6 @@
     </div>
   </div>
 </section>
-
 @endsection
 
 @section('js')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\User;
 use App\Models\UniqueId;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +20,8 @@ class TeacherController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = UniqueId::where('user_id', $user->id)->first();
-        // dd($data->user->name);
+        $data = User::where('id', $user->id)->first();
+
         return view('dashboard.teacher.home', compact('user', 'data'));
     }
 

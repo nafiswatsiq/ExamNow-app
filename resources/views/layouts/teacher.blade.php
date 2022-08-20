@@ -28,7 +28,7 @@
         </div> -->
         <div>
           <div class=" d-flex justify-content-center">
-            <img src="https://ui-avatars.com/api/?name=SMPN 100 JAKARTA&background=random&color=fff&length=1" class="rounded-3" width="100px" alt="">
+            <img src="{{ auth()->user()->getFirstMediaUrl('avatar', 'thumb') }}" onError="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ auth()->user()->name }}&background=43a1ff&color=ffffff&length=1'" class="rounded-3" width="100px" alt="">
           </div>
           <p class="fw-800 second-color fs-5 mb-0 mt-3 text-center">{{ auth()->user()->name }}</p>
         </div>
@@ -75,6 +75,11 @@
               </a>
             </div>
           </div>
+        </div>
+        <div class="mt-3">
+          <a href="/" class="fw-500 fs-6 fw-semibold d-flex align-items-center">
+            <i class="uil uil-apps me-2"></i> Beranda
+          </a>
         </div>
         <div class="my-3">
           <form action="{{ url('logout') }}" method="post">

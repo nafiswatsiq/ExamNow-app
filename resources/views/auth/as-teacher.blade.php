@@ -11,7 +11,7 @@
         <span class="fw-800 second-color fs-3 ms-2">Daftar sebagai Pengajar</span>
       </div>
       <div class="card p-5 bg-thrid border-0 shadow-sm">
-        <form onSubmit="return checkPassword(this)" action="{{ url('register-teacher') }}" method="post">
+        <form onSubmit="return checkPassword(this)" action="{{ url('register-teacher') }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="row">
             <div class="col-auto">
@@ -25,7 +25,7 @@
                         <i class="uil uil-pen"></i> Unggah</span>
                     </label>
                   </div>
-                  <input type="file" id="mediaFile" accept="image/png, image/jpeg" />
+                  <input type="file" name="avatar" id="mediaFile" accept="image/png, image/jpeg" />
                 </div>
                 <div class="card-body">
                   <p class="card-text text-center text__color fs-7">Ukuran 300 x 300 piksel</p>
@@ -42,7 +42,7 @@
                   <label for="email" class="form-label fw-800 text-secondary">Email</label>
                   <input type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp" value="{{ old('email') }}">
                   @error('email')
-                      <p class="text-danger form-text m-0">Email sudah terdaftar</p>
+                  <p class="text-danger form-text m-0">Email sudah terdaftar</p>
                   @enderror
                 </div>
                 <div class="col-6 mb-3">
@@ -50,7 +50,7 @@
                   <input type="password" name="password" class="form-control" id="password" aria-describedby="emailHelp">
                   <div id="emailHelp" class="form-text">password min 8 karakter</div>
                   @error('password')
-                      <p class="text-danger form-text m-0">password min 8 karakter / password tidak sama</p>
+                  <p class="text-danger form-text m-0">password min 8 karakter / password tidak sama</p>
                   @enderror
                 </div>
                 <div class="col-6 mb-3">
@@ -60,10 +60,14 @@
                     <span class="input-group-text bg-white" id="basic-addon2"><i class="uil uil-check" id="match"></i></span>
                   </div>
                 </div>
+                <div class="col-6 mb-3">
+                  <label for="nameClass" class="form-label fw-800 text-secondary">Nama Kelas</label>
+                  <input type="text" name="name_class" class="form-control" id="nameClass" aria-describedby="emailHelp" value="{{ old('name_class') }}">
+                </div>
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-3">
-              <button type="button" class="btn btn-outline-secondary fw-800 rounded-pill px-4 mx-2">Kembali</button>
+              <a href="{{ url()->previous() }}" type="button" class="btn btn-outline-secondary fw-800 rounded-pill px-4 mx-2">Kembali</a>
               <button type="submit" class="btn bg-second bg-second-hover text-light fw-800 rounded-pill px-4 mx-2">Daftar</button>
             </div>
           </div>

@@ -100,6 +100,7 @@
     <i class="uil uil-arrow-up scroll__icon"></i>
   </a>
 
+  @include('sweetalert::alert')
   <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
   <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
