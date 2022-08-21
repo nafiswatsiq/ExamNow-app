@@ -10,11 +10,11 @@
         </a>
         <span class="fw-800 second-color fs-3 ms-2">Daftar sebagai Pengajar</span>
       </div>
-      <div class="card p-5 bg-thrid border-0 shadow-sm">
+      <div class="card p-xl-5 p-3 bg-thrid border-0 shadow-sm">
         <form onSubmit="return checkPassword(this)" action="{{ url('register-teacher') }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="row">
-            <div class="col-auto">
+            <div class="col-md-auto col mt-xl-0 mt-3">
               <div class="card p-3">
                 <div class="d-flex justify-content-center">
                   <img src="{{ asset('image/dummy-image-square.jpg') }}" alt="" class="rounded-3 dummy-img-upload" />
@@ -32,37 +32,45 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col mt-xl-0 mt-3">
               <div class="row">
-                <div class="col-6 mb-3">
+                <div class="col-xl-6 col-12 mb-3">
                   <label for="name" class="form-label fw-800 text-secondary">Nama</label>
-                  <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" value="{{ old('name') }}">
+                  <input type="text" name="name" class="form-control" id="name" aria-describedby="nama" value="{{ old('name') }}">
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-xl-6 col-12 mb-3">
                   <label for="email" class="form-label fw-800 text-secondary">Email</label>
-                  <input type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp" value="{{ old('email') }}">
+                  <input type="text" name="email" class="form-control" id="email" aria-describedby="email" value="{{ old('email') }}">
                   @error('email')
                   <p class="text-danger form-text m-0">Email sudah terdaftar</p>
                   @enderror
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-xl-6 col-12 mb-3">
                   <label for="password" class="form-label fw-800 text-secondary">Kata sandi</label>
-                  <input type="password" name="password" class="form-control" id="password" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">password min 8 karakter</div>
+                  <input type="password" name="password" class="form-control" id="password" aria-describedby="password">
+                  {{-- <div id="emailHelp" class="form-text">password min 8 karakter</div> --}}
                   @error('password')
                   <p class="text-danger form-text m-0">password min 8 karakter / password tidak sama</p>
                   @enderror
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-xl-6 col-12 mb-3">
                   <label for="repassword" class="form-label fw-800 text-secondary">Ulangi kata sandi</label>
                   <div class="input-group">
-                    <input type="password" name="confirm_password" class="form-control border-end-0" id="repassword" aria-describedby="emailHelp">
+                    <input type="password" name="confirm_password" class="form-control border-end-0" id="repassword" aria-describedby="rePassword">
                     <span class="input-group-text bg-white" id="basic-addon2"><i class="uil uil-check" id="match"></i></span>
                   </div>
                 </div>
-                <div class="col-6 mb-3">
-                  <label for="nameClass" class="form-label fw-800 text-secondary">Nama Kelas</label>
-                  <input type="text" name="name_class" class="form-control" id="nameClass" aria-describedby="emailHelp" value="{{ old('name_class') }}">
+                <div class="col-xl-6 col-12 mb-3">
+                  <label for="nameClass" class="form-label fw-800 text-secondary">Jenis Kelamin</label>
+                  <select class="form-select" name="gender" aria-label="Default select example">
+                    <option selected>Jenis Kelamin</option>
+                    <option value="L">Laki-Laki</option>
+                    <option value="P">Perempuan</option>
+                  </select>
+                </div>
+                <div class="col-xl-6 col-12 mb-3">
+                  <label for="nameClass" class="form-label fw-800 text-secondary">Mata Pelajaran</label>
+                  <input type="text" name="subjects" class="form-control" id="nameClass" aria-describedby="emailHelp" value="{{ old('name_class') }}">
                 </div>
               </div>
             </div>

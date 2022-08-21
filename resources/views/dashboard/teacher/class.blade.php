@@ -57,10 +57,11 @@
                   </tr>
               </thead>
               <tbody>
+                @foreach ($classroom->user->where('role', 'student') as $key => $item)
                   <tr>
-                      <th scope="row">1</th>
-                      <td>AHMAD TOBIRI</td>
-                      <td>Laki-laki</td>
+                      <th scope="row">{{ $key++ }}</th>
+                      <td>{{ $item->name }}</td>
+                      <td>{{ $item->gender == 'L' ? 'Laki-Laki' : 'Perempuan' }}</td>
                       <td>
                         <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
                           <i class="uil uil-edit"></i> edit
@@ -68,28 +69,7 @@
                         <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
                       </td>
                   </tr>
-                  <tr>
-                      <th scope="row">2</th>
-                      <td>ABDUL KASIM</td>
-                      <td>Laki-laki</td>
-                      <td>
-                        <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
-                          <i class="uil uil-edit"></i> edit
-                        </button>
-                        <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">3</th>
-                      <td>SRI REJEKI</td>
-                      <td>Perempuan</td>
-                      <td>
-                        <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
-                          <i class="uil uil-edit"></i> edit
-                        </button>
-                        <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
-                      </td>
-                  </tr>
+                @endforeach
               </tbody>
               <tfoot>
                   <tr>

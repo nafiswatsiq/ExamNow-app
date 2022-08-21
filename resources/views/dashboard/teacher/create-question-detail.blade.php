@@ -32,7 +32,7 @@
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Guru/Pengajar<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="" placeholder="Ir. Joko Widodo" required>
+              <input type="text" class="form-control" id="" placeholder="Ir. Joko Widodo" required value="{{ auth()->user()->name }}">
             </div>
             <div class="col-12">
               <div class="row">

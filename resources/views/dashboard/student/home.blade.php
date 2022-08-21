@@ -14,13 +14,13 @@
 <body class="dahsboard">
   <div class="sidebar p-4">
     <div class="d-grid">
-      <p class="fw-800 fs-3 white-color">ExamNow</p>
+      <p onclick="location.href='/'" class="fw-800 fs-3 white-color">ExamNow</p>
       <div class="row mt-2">
         <div class="avatar rounded-3 col-auto p-0 ms-3">
-          <img src="https://ui-avatars.com/api/?name=Nafis watsiq&background=random&size=30&color=fff" alt="">
+          <img src="{{ auth()->user()->getFirstMediaUrl('avatar', 'thumb') }}" onError="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ auth()->user()->name }}&background=fff&color=43a1ff&length=1'" class="rounded-3" width="100px" alt="">
         </div>
         <div class="col">
-          <p class="fw-700 white-color fs-5 mb-0">Nafis watsiq</p>
+          <p class="fw-700 white-color fs-5 mb-0">{{ auth()->user()->name }}</p>
           <span class="white-color fs-6">Siswa</span>
         </div>
       </div>
@@ -62,9 +62,10 @@
         </div>
       </div>
       <div class="my-3">
-        <a href="#" class="fw-500 fs-6 fw-semibold text-light d-flex align-items-center">
-          <i class="uil uil-signout me-2"></i> Keluar
-        </a>
+        <form action="{{ url('logout') }}" method="post">
+          @csrf
+          <button type="submit" class="fw-500 fs-6 fw-semibold d-flex align-items-center border-0 bg-second text-light p-0"><i class="uil uil-signout me-2"></i> Keluar</button>
+        </form>
       </div>
     </div>
   </div>

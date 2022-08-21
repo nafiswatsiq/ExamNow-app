@@ -20,20 +20,24 @@ class TeacherController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = User::where('id', $user->id)->first();
-
+        $data = User::where('id', auth()->user()->id)->first();
+        // dd($data->classroom->first()->name);
         return view('dashboard.teacher.home', compact('user', 'data'));
     }
 
     // Class
     public function coridorClass()
     {
-        return view('dashboard.teacher.coridor-class');
+        $data = User::where('id', auth()->user()->id)->first();
+        return view('dashboard.teacher.coridor-class' , compact('data'));
     }
     public function class($class)
     {
         $class;
-        return view('dashboard.teacher.class', compact('class'));
+        $data = User::where('id', auth()->user()->id)->first();
+        $classroom = Classroom::where('id', $data->classroom->first()->id)->first();
+        // dd($classroom->user->where('role', 'student'));
+        return view('dashboard.teacher.class', compact('class', 'classroom'));
     }
 
     // Teacher

@@ -35,7 +35,7 @@
         <div class="py-5 border-bottom">
           <div>
             <a href="{{ route('teacher.home') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center py-1 {{ Route::current()->getName() == 'teacher.home' ? 'active' : '' }}">
-              <i class="uil uil-estate me-2 fs-4"></i> Home
+              <i class="uil uil-estate me-2 fs-4"></i> Beranda
             </a>
           </div>
           <div class="mt-4">
@@ -78,7 +78,7 @@
         </div>
         <div class="mt-3">
           <a href="/" class="fw-500 fs-6 fw-semibold d-flex align-items-center">
-            <i class="uil uil-apps me-2"></i> Beranda
+            <i class="uil uil-apps me-2"></i> Home
           </a>
         </div>
         <div class="my-3">

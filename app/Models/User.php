@@ -49,6 +49,6 @@ class User extends Authenticatable implements HasMedia
     
     public function classroom()
     {
-        return $this->belongsTo(Classroom::class);
+        return $this->belongsToMany(Classroom::class);
     }
 }
