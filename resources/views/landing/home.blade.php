@@ -12,10 +12,12 @@
         <p data-aos="fade-right" data-aos-duration="500" class="fs-4 main-color fw-semibold z-2">ExamNow</p>
         <p data-aos="fade-right" data-aos-duration="800" class="fw-800 fs-50 second-color z-2">Aplikasi Ujian online gratis berbasis web</p>
         <p data-aos="fade-right" data-aos-duration="900" class="text-muted fs-6 z-2">Aplikasi Ujian online untuk membuat soal serta tersedia berbagai soal seperti Try Out, SBMPTN, UAS, UTS, dan lain-lain</p>
+        @if (empty(auth()->user()->name))
         <div class="d-flex gap-4">
           <a data-aos="fade-right" data-aos-duration="1000" href="{{ url('register') }}" class="btn bg-gradient fw-bold px-4 fs-5 rounded-pill white-color white-hover z-2">Daftar <i class="uil uil-arrow-circle-right fs-5"></i></a>
           <a data-aos="fade-right" data-aos-duration="1200" href="{{ url('login') }}" class="btn second-color fw-bold px-4 fs-5 rounded-pill border-second border-second-hover z-2">Masuk</a>
         </div>
+        @endif
       </div>
       <div class="col-md-6 col-12 mt-4 mt-md-0">
         <div class="img-home" data-aos="fade-left" data-aos-duration="1000">
