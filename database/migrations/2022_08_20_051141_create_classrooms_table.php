@@ -16,6 +16,7 @@ class CreateClassroomsTable extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
             $table->string('subjects');
+            $table->string('slug');
             $table->integer('classroom');
             $table->timestamps();
         });

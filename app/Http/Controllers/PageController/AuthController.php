@@ -49,16 +49,7 @@ class AuthController extends Controller
             'email'             => 'required|unique:users',
             'password'          => 'required|min:8|required_with:confirm_password|same:confirm_password',
             'confirm_password'  => 'required|min:8',
-            'subjects'          => 'required',
-            'gender'            => 'required',
         ]);
-
-        // create classroom
-        $classroom = new Classroom();
-        $classroom->subjects    = $request->subjects;
-        $classroom->classroom   = random_int(1000000, 9999999);
-        // dd($classroom->classroom);
-        $classroom->save();
 
         // create user
         $user = new User();
@@ -69,21 +60,17 @@ class AuthController extends Controller
         $user->gender   = $request->gender;
         $user->save();
         
-        $classroom_id = Classroom::where('classroom', $classroom->classroom)->first()->id;
-        $user->classroom()->attach($classroom_id);
-        // dd($user);
-        
         if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
             $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
         }
 
-        // create teacher
-        $teacher = new Teacher();
-        $teacher->user_id = User::where('email', $data['email'])->first()->id;
-        $teacher->save();
+        // // create teacher
+        // $teacher = new Teacher();
+        // $teacher->user_id = User::where('email', $data['email'])->first()->id;
+        // $teacher->save();
 
         alert()->success('Berhasil Mendaftar','Silahkan Login')->showConfirmButton('Oke', '#7176FF');
-        return redirect('/login');
+        return route('login');
     }
     public function registerStoreStudent(Request $request)
     {
@@ -113,13 +100,8 @@ class AuthController extends Controller
             $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
         }
 
-        // create teacher
-        // $teacher = new Teacher();
-        // $teacher->user_id = User::where('email', $data['email'])->first()->id;
-        // $teacher->save();
-
         alert()->success('Berhasil Mendaftar','Silahkan Login')->showConfirmButton('Oke', '#7176FF');
-        return redirect('/login');
+        return route('login');
     }
 
     public function loginStore(Request $request)

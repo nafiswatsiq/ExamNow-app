@@ -34,7 +34,9 @@ class TeacherController extends Controller
         SEOTools::setTitle('Kelas');
 
         $data = User::where('id', auth()->user()->id)->first();
-        return view('dashboard.teacher.coridor-class' , compact('data'));
+        $class = $data->classroom->sortByDesc('id');
+        // dd($data->classroom->sortByDesc('id'));
+        return view('dashboard.teacher.coridor-class' , compact('data', 'class'));
     }
     public function class($class)
     {
@@ -42,7 +44,7 @@ class TeacherController extends Controller
 
         $class;
         $data = User::where('id', auth()->user()->id)->first();
-        $classroom = Classroom::where('id', $data->classroom->first()->id)->first();
+        $classroom = Classroom::where('slug', $class)->first();
         // dd($classroom->user->where('role', 'student'));
         return view('dashboard.teacher.class', compact('class', 'classroom'));
     }

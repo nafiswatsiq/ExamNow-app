@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\AddClassController;
 use App\Http\Controllers\Dashboard\StudentController;
 use App\Http\Controllers\Dashboard\TeacherController;
 use App\Http\Controllers\Exam\ExamController;
@@ -64,6 +65,8 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/create-question-detail', 'createQuestionDetail')->name('teacher.create-question-detail');
             });
         });
+
+        Route::post('add-class', [AddClassController::class, 'addClass'])->name('add-class');
     });
     
     Route::middleware(['check_auth:student'])->group(function () {

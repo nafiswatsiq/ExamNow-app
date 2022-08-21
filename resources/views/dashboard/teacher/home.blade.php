@@ -10,7 +10,7 @@
 <section>
   <div class="container-fluid px-5 my-3">
     <div class="row">
-      <div class="col-auto">
+      {{-- <div class="col-auto">
         <div class="card px-5 py-3 border-0 shadow-sm rounded-4">
           <p class="text-secondary fw-700 m-0">Kelas</p>
           <div>
@@ -31,7 +31,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>

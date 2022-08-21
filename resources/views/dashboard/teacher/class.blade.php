@@ -30,16 +30,16 @@
           <div class="col ms-3">
             <table>
               <tr>
-                <td>Wali Kelas</td>
-                <td>:<span class="mx-2 fw-700">{{ auth()->user()->name }}</span></td>
+                <td>Kelas</td>
+                <td>:<span class="mx-2 fw-700">{{ $classroom->subjects }}</span></td>
               </tr>
               <tr>
                 <td>Murid</td>
                 <td>:<span class="mx-2 fw-700">50</span></td>
               </tr>
               <tr>
-                <td>Kelas</td>
-                <td>:<span class="mx-2 fw-700">{{ $class }}</span></td>
+                <td>ID Kelas</td>
+                <td>:<span class="mx-2 fw-700">{{ $classroom->classroom }}</span></td>
               </tr>
             </table>
           </div>

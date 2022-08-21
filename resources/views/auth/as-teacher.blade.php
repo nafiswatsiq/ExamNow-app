@@ -60,18 +60,7 @@
                     <span class="input-group-text bg-white" id="basic-addon2"><i class="uil uil-check" id="match"></i></span>
                   </div>
                 </div>
-                <div class="col-xl-6 col-12 mb-3">
-                  <label for="nameClass" class="form-label fw-800 text-secondary">Jenis Kelamin</label>
-                  <select class="form-select" name="gender" aria-label="Default select example">
-                    <option selected>Jenis Kelamin</option>
-                    <option value="L">Laki-Laki</option>
-                    <option value="P">Perempuan</option>
-                  </select>
-                </div>
-                <div class="col-xl-6 col-12 mb-3">
-                  <label for="nameClass" class="form-label fw-800 text-secondary">Mata Pelajaran</label>
-                  <input type="text" name="subjects" class="form-control" id="nameClass" aria-describedby="emailHelp" value="{{ old('name_class') }}">
-                </div>
+
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-3">
