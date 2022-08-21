@@ -14,7 +14,7 @@
 <body class="dahsboard">
   <div class="sidebar p-4">
     <div class="d-grid">
-      <p onclick="location.href='/'" class="fw-800 fs-3 white-color">ExamNow</p>
+      <p onclick="location.href='/'" class="fw-800 fs-3 white-color pointer">ExamNow</p>
       <div class="row mt-2">
         <div class="avatar rounded-3 col-auto p-0 ms-3">
           <img src="{{ auth()->user()->getFirstMediaUrl('avatar', 'thumb') }}" onError="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ auth()->user()->name }}&background=fff&color=43a1ff&length=1'" class="rounded-3" width="100px" alt="">

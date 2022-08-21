@@ -3,38 +3,37 @@
 namespace App\Http\Controllers\PageController;
 
 use App\Models\User;
-use App\Models\School;
-use App\Models\UniqueId;
-use Illuminate\Support\Str;
+use App\Models\Teacher;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Classroom;
-use App\Models\Teacher;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use RealRashid\SweetAlert\Facades\Alert;
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class AuthController extends Controller
 {
     //
     public function login(Request $request)
     {
+        SEOTools::setTitle('Masuk');
         return view('auth.login');
     }
 
     public function register(Request $request)
     {
+        SEOTools::setTitle('Daftar');
         return view('auth.register-as');
     }
 
     public function registerStudent(Request $request)
     {
+        SEOTools::setTitle('Daftar Siswa');
         return view('auth.as-student');
     }
 
     public function registerTeacher(Request $request)
     {
+        SEOTools::setTitle('Daftar pengajar');
         return view('auth.as-teacher');
     }
 

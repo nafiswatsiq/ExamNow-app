@@ -8,6 +8,7 @@ use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Artesaos\SEOTools\Facades\SEOTools;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class TeacherController extends Controller
@@ -19,6 +20,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
+        SEOTools::setTitle('Dashboard');
+        
         $user = Auth::user();
         $data = User::where('id', auth()->user()->id)->first();
         // dd($data->classroom->first()->name);
@@ -28,11 +31,15 @@ class TeacherController extends Controller
     // Class
     public function coridorClass()
     {
+        SEOTools::setTitle('Kelas');
+
         $data = User::where('id', auth()->user()->id)->first();
         return view('dashboard.teacher.coridor-class' , compact('data'));
     }
     public function class($class)
     {
+        SEOTools::setTitle( $class );
+
         $class;
         $data = User::where('id', auth()->user()->id)->first();
         $classroom = Classroom::where('id', $data->classroom->first()->id)->first();
@@ -49,16 +56,22 @@ class TeacherController extends Controller
     // Exam
     public function exam()
     {
+        SEOTools::setTitle( 'Soal' );
+
         return view('dashboard.teacher.exam');
     }
 
     public function createQuestion()
     {
+        SEOTools::setTitle( 'Buat soal' );
+
         return view('dashboard.teacher.create-question');
     }
 
     public function createQuestionDetail()
     {
+        SEOTools::setTitle( 'Buat soal' );
+
         return view('dashboard.teacher.create-question-detail');
     }
 
