@@ -66,7 +66,8 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['check_auth:student'])->group(function () {
         Route::prefix('student')->group(function () {
             Route::controller(StudentController::class)->group(function () {
-                Route::get('/', 'index')->name('home');
+                Route::get('/', 'index')->name('student.home');
+                Route::get('/class', 'coridorClass')->name('student.coridor-class');
                 // Route::get('/register', 'register')->name('register');
             });
         });

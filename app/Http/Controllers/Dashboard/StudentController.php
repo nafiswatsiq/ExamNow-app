@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
@@ -17,6 +18,13 @@ class StudentController extends Controller
         return view('dashboard.student.home');
     }
 
+    public function coridorClass()
+    {
+        $data = User::where('id', auth()->user()->id)->first();
+        $class = $data->classroom->first();
+        // dd($class);
+        return view('dashboard.student.coridor-class', compact('data', 'class'));
+    }
     /**
      * Show the form for creating a new resource.
      *

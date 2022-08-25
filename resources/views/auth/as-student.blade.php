@@ -68,10 +68,10 @@
                     <option value="P">Perempuan</option>
                   </select>
                 </div>
-                {{-- <div class="col-xl-6 col-12 mb-3">
+                <div class="col-xl-6 col-12 mb-3">
                   <label for="nameClass" class="form-label fw-800 text-secondary">Id Kelas</label>
                   <input type="number" name="id_class" class="form-control" id="nameClass" aria-describedby="emailHelp" value="{{ old('name_class') }}">
-                </div> --}}
+                </div>
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-3">

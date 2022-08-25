@@ -17,7 +17,7 @@
 <section>
   <div class="container-fluid px-5 mt-3">
     <div class="row my-4 position-relative" id="listQuestion">
-      <div class="col-12" id="question">
+      <div class="col-9" id="question">
         <div class="card p-4 shadow-sm border-0">
           <form action="./test.php" method="get" enctype="multipart/form-data">
             <div class="row">
@@ -140,44 +140,48 @@
           </form>
         </div>
       </div>
-    </div>
-    <div class="answer-tab">
-      <div class="border border-2 p-3 rounded-3">
-        <span class="text-black-50">List nomor:</span>
-        <div class="row gap-2 p-3">
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num answered">
-            1
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            2
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            3
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            4
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            5
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            6
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            7
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            8
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            9
-          </div>
-          <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-            10
+
+      <div class="col-3">
+        <div class="answer-tab">
+          <div class="border border-2 p-3 rounded-3">
+            <span class="text-black-50">List nomor:</span>
+            <div class="row gap-2 p-3">
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num answered">
+                1
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                2
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                3
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                4
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                5
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                6
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                7
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                8
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                9
+              </div>
+              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
+                10
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 

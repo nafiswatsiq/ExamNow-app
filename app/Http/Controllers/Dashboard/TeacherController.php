@@ -40,10 +40,10 @@ class TeacherController extends Controller
     }
     public function class($class)
     {
-        SEOTools::setTitle( $class );
-
         $data = User::where('id', auth()->user()->id)->first();
         $classroom = Classroom::where('classroom', $class)->first();
+        
+        SEOTools::setTitle( $classroom->subjects );
         // dd($classroom->user->where('role', 'student'));
         return view('dashboard.teacher.class', compact('class', 'classroom'));
     }
