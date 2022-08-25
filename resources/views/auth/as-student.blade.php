@@ -8,7 +8,7 @@
         <a href="{{ url()->previous() }}">
           <i class="uil uil-arrow-left shadow-sm border rounded-pill fs-3 px-1 text-secondary"></i>
         </a>
-        <span class="fw-800 second-color fs-3 ms-2">Daftar sebagai Pengajar</span>
+        <span class="fw-800 second-color fs-3 ms-2">Daftar sebagai Siswa</span>
       </div>
       <div class="card p-xl-5 p-3 bg-thrid border-0 shadow-sm">
         <form onSubmit="return checkPassword(this)" action="{{ url('register-student') }}" method="post" enctype="multipart/form-data">
@@ -68,10 +68,10 @@
                     <option value="P">Perempuan</option>
                   </select>
                 </div>
-                <div class="col-xl-6 col-12 mb-3">
+                {{-- <div class="col-xl-6 col-12 mb-3">
                   <label for="nameClass" class="form-label fw-800 text-secondary">Id Kelas</label>
                   <input type="number" name="id_class" class="form-control" id="nameClass" aria-describedby="emailHelp" value="{{ old('name_class') }}">
-                </div>
+                </div> --}}
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-3">

@@ -57,7 +57,7 @@ class AuthController extends Controller
         $user->email    = $request->email;
         $user->password = bcrypt($request->password);
         $user->role     = 'teacher';
-        $user->gender   = $request->gender;
+        $user->gender   = 'U';
         $user->save();
         
         if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
@@ -70,7 +70,7 @@ class AuthController extends Controller
         // $teacher->save();
 
         alert()->success('Berhasil Mendaftar','Silahkan Login')->showConfirmButton('Oke', '#7176FF');
-        return route('login');
+        return redirect('login');
     }
     public function registerStoreStudent(Request $request)
     {
@@ -79,7 +79,7 @@ class AuthController extends Controller
             'email'             => 'required|unique:users',
             'password'          => 'required|min:8|required_with:confirm_password|same:confirm_password',
             'confirm_password'  => 'required|min:8',
-            'id_class'          => 'required',
+            // 'id_class'          => 'required',
             'gender'            => 'required',
         ]);
 
@@ -92,8 +92,8 @@ class AuthController extends Controller
         $user->gender   = $request->gender;
         $user->save();
         
-        $classroom_id = Classroom::where('classroom', $request->id_class)->first()->id;
-        $user->classroom()->attach($classroom_id);
+        // $classroom_id = Classroom::where('classroom', $request->id_class)->first()->id;
+        // $user->classroom()->attach($classroom_id);
         // dd($user);
         
         if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
@@ -101,7 +101,7 @@ class AuthController extends Controller
         }
 
         alert()->success('Berhasil Mendaftar','Silahkan Login')->showConfirmButton('Oke', '#7176FF');
-        return route('login');
+        return redirect('login');
     }
 
     public function loginStore(Request $request)

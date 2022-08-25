@@ -42,18 +42,17 @@ class TeacherController extends Controller
     {
         SEOTools::setTitle( $class );
 
-        $class;
         $data = User::where('id', auth()->user()->id)->first();
-        $classroom = Classroom::where('slug', $class)->first();
+        $classroom = Classroom::where('classroom', $class)->first();
         // dd($classroom->user->where('role', 'student'));
         return view('dashboard.teacher.class', compact('class', 'classroom'));
     }
 
     // Teacher
-    public function teacher()
-    {
-        return view('dashboard.teacher.teacher');
-    }
+    // public function teacher()
+    // {
+    //     return view('dashboard.teacher.teacher');
+    // }
 
     // Exam
     public function exam()

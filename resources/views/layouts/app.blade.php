@@ -56,10 +56,10 @@
             @if (Route::current()->getName() == 'login')
             <a href="{{ url('register') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-user"></i> Daftar</a>
             @elseif(Route::current()->getName() == 'register')
-            <a href="{{ url('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
+            <a href="{{ route('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
             @else
             <a href="{{ url('register') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-user"></i> Daftar</a>
-            <a href="{{ url('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
+            <a href="{{ route('login') }}" class="btn fw-semibold text-light rounded-pill"><i class="uil uil-sign-out-alt"></i> Masuk</a>
             @endif
           @endauth
         </div>

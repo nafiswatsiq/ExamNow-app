@@ -11,7 +11,7 @@
       <div class="col-12" id="page-login">
         <div class="right-login d-flex justify-content-center align-items-md-center ">
           <div class="box-login px-2">
-            <div class="row bg-white px-4 py-4 rounded-4">
+            <div class="row bg-white px-4 py-4 rounded-4 shadow-sm border">
               <div class="col-12 mt-3 mt-md-0">
                 <p class="text-center fw-800 fs-2 second-color">Login</p>
                 <p class="text-danger form-text">{{ session('error') }}</p>

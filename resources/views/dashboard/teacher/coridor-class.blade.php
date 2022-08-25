@@ -20,7 +20,7 @@
       </div>
       @foreach ($class as $item)
       <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-12">
-        <a href="{{ url('teacher/class', $item->slug ) }}" class="card p-4 card-class align-items-end flex-row border-0 shadow-sm rounded-4">
+        <a href="{{ url('teacher/class', $item->classroom ) }}" class="card p-4 card-class align-items-end flex-row border-0 shadow-sm rounded-4">
           <div>
             <div>
               <p class="m-0 mt-3 fw-800 second-color fs-4 ">{{ $item->subjects }}</p>
