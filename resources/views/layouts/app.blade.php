@@ -37,8 +37,8 @@
           @auth
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fw-800 text-light m-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ auth()->user()->name }}
+              <a class="nav-link dropdown-toggle fw-800 text-light m-0 d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ auth()->user()->getFirstMediaUrl('avatar', 'thumb') }}" width="25px" alt="" class="me-3 rounded"> {{ auth()->user()->name }}
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{{ url(auth()->user()->role) }}"><i class="uil uil-apps me-2"></i> Dashboard</a></li>

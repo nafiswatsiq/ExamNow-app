@@ -32,6 +32,11 @@
       transition: all 200ms;
       color: var(--white);
     }
+    button:hover{
+      transform: translateX(5px);
+      transition: all 200ms;
+      color: var(--white);
+    }
 
     .active{
       font-weight: 700 !important;

@@ -674,6 +674,11 @@ body.dark-theme .offcanvas .answer-num.answered {
   transition: all 200ms;
   color: var(--white);
 }
+.dahsboard .sidebar button:hover {
+  transform: translateX(5px);
+  transition: all 200ms;
+  color: var(--white);
+}
 .dahsboard .sidebar .active {
   font-weight: 700 !important;
   color: var(--white);
