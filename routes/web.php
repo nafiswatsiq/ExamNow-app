@@ -22,14 +22,16 @@ Route::get('/', [LandingController::class, 'home'])->name('home');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/register', 'register')->name('register')->middleware('guest');
-    Route::get('/as-student', 'registerStudent')->name('as-student')->middleware('guest');
     Route::get('/as-teacher', 'registerTeacher')->name('as-teacher')->middleware('guest');
+    Route::get('/as-student', 'registerStudent')->name('as-student')->middleware('guest');
+    Route::get('/as-personal', 'registerPersonal')->name('as-personal')->middleware('guest');
     // Route::get('/as-school', 'registerSchool')->name('as-school')->middleware('guest');
     Route::get('/login', 'login')->name('login')->middleware('guest');
 
     // Route::post('/register-school', 'registerStoreSchool')->name('register-school');
     Route::post('/register-teacher', 'registerStoreTeacher')->name('register-teacher');
     Route::post('/register-student', 'registerStoreStudent')->name('register-student');
+    Route::post('/register-personal', 'registerStorePersonal')->name('register-personal');
     Route::post('/login', 'loginStore')->name('loginPost');
     Route::post('/logout', 'logout')->name('logout');
 });

@@ -25,16 +25,22 @@ class AuthController extends Controller
         return view('auth.register-as');
     }
 
+    public function registerTeacher(Request $request)
+    {
+        SEOTools::setTitle('Daftar pengajar');
+        return view('auth.as-teacher');
+    }
+
     public function registerStudent(Request $request)
     {
         SEOTools::setTitle('Daftar Siswa');
         return view('auth.as-student');
     }
 
-    public function registerTeacher(Request $request)
+    public function registerPersonal(Request $request)
     {
-        SEOTools::setTitle('Daftar pengajar');
-        return view('auth.as-teacher');
+        SEOTools::setTitle('Daftar Personal');
+        return view('auth.as-personal');
     }
 
     // public function registerSchool(Request $request)
@@ -95,6 +101,33 @@ class AuthController extends Controller
         $classroom_id = Classroom::where('classroom', $request->id_class)->first()->id;
         $user->classroom()->attach($classroom_id);
         // dd($user);
+        
+        if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
+            $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
+        }
+
+        alert()->success('Berhasil Mendaftar','Silahkan Login')->showConfirmButton('Oke', '#7176FF');
+        return redirect('login');
+    }
+
+    public function registerStorePersonal(Request $request)
+    {
+        $data = $request->validate([
+            'name'              => 'required',
+            'email'             => 'required|unique:users',
+            'password'          => 'required|min:8|required_with:confirm_password|same:confirm_password',
+            'confirm_password'  => 'required|min:8',
+            'gender'            => 'required',
+        ]);
+
+        // create user
+        $user = new User();
+        $user->name     = $request->name;
+        $user->email    = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->role     = 'personal';
+        $user->gender   = $request->gender;
+        $user->save();
         
         if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
             $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');

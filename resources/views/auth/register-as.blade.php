@@ -14,7 +14,7 @@
             <p class="second-color fw-800 fs-3">Daftar sebagai</p>
           </div>
           <div class="row px-3 gy-3">
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12">
               <a href="{{ Route('as-teacher') }}" class="card p-4 shadow-sm rounded-4 btn-card">
                 <div class="d-flex justify-content-center">
                   <i class="uil uil-house-user icon"></i>
@@ -22,20 +22,22 @@
                 <p class="text-black-50 fw-800 fs-5 text-center m-0 mt-3">Sekolah</p>
               </a>
             </div>
-            {{-- <div class="col-lg-4 col-md-6 col-12 mt-2">
-              <a href="{{ Route('as-teacher') }}" class="card p-4 shadow-sm rounded-4 btn-card">
-                <div class="d-flex justify-content-center">
-                  <i class="uil uil-book-reader icon"></i>
-                </div>
-                <p class="text-black-50 fw-800 fs-5 text-center m-0 mt-3">Pengajar</p>
-              </a>
-            </div> --}}
-            <div class="col-lg-6 col-md-6 col-12">
+
+            <div class="col-lg-4 col-md-6 col-12">
               <a href="{{ Route('as-student') }}" class="card p-4 shadow-sm rounded-4 btn-card">
+                <div class="d-flex justify-content-center">
+                  <i class="uil uil-users-alt icon"></i>
+                </div>
+                <p class="text-black-50 fw-800 fs-5 text-center m-0 mt-3">Siswa</p>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <a href="{{ Route('as-personal') }}" class="card p-4 shadow-sm rounded-4 btn-card">
                 <div class="d-flex justify-content-center">
                   <i class="uil uil-user icon"></i>
                 </div>
-                <p class="text-black-50 fw-800 fs-5 text-center m-0 mt-3">Siswa</p>
+                <p class="text-black-50 fw-800 fs-5 text-center m-0 mt-3">Personal</p>
               </a>
             </div>
 
