@@ -13,6 +13,7 @@
   --fourth-bg: #5daeff;
   --white: #ffffff;
   --black: rgb(46, 46, 46);
+  --text: #25396f;
   --gray-300: rgb(224, 224, 224);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
@@ -177,6 +178,10 @@ a {
 
 .pointer {
   cursor: pointer;
+}
+
+.text-color {
+  color: var(--text);
 }
 
 .navbar {
@@ -647,10 +652,11 @@ body.dark-theme .offcanvas .answer-num.answered {
   margin: 0;
 }
 .dahsboard .sidebar {
-  width: 260px;
+  width: 280px;
   height: 100%;
   position: fixed;
-  background-color: var(--second-bg);
+  background-color: var(--white);
+  overflow-y: scroll;
 }
 .dahsboard .sidebar .avatar {
   width: 55px;
@@ -667,27 +673,35 @@ body.dark-theme .offcanvas .answer-num.answered {
      object-fit: cover;
 }
 .dahsboard .sidebar a {
-  color: rgb(226, 226, 226);
+  color: rgb(112, 127, 175);
 }
 .dahsboard .sidebar a:hover {
   transform: translateX(5px);
   transition: all 200ms;
-  color: var(--white);
+  color: rgb(112, 127, 175);
+}
+.dahsboard .sidebar button {
+  color: rgb(112, 127, 175);
 }
 .dahsboard .sidebar button:hover {
   transform: translateX(5px);
   transition: all 200ms;
-  color: var(--white);
+  color: rgb(112, 127, 175);
 }
 .dahsboard .sidebar .active {
   font-weight: 700 !important;
-  color: var(--white);
+  color: var(--second-bg);
+}
+.dahsboard .sidebar::-webkit-scrollbar {
+  width: 0;
 }
 .dahsboard .content {
-  margin-left: 260px;
+  margin-left: 280px;
+  background: #F2F7FF;
+  min-height: 100vh;
 }
 .dahsboard .content .navbar {
-  background: var(--white);
+  background: #F2F7FF;
 }
 .dahsboard .content .nav-pills .nav-link {
   color: rgb(131, 131, 131);

@@ -13,6 +13,7 @@
   --fourth-bg: #5daeff;
   --white: #ffffff;
   --black: rgb(46, 46, 46);
+  --text: #25396f;
   --gray-300: rgb(224, 224, 224);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
@@ -153,6 +154,10 @@ a{
 }
 .pointer{
   cursor: pointer;
+}
+
+.text-color{
+  color: var(--text);
 }
 
 .navbar{

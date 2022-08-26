@@ -3,10 +3,11 @@
   margin: 0;
 
   .sidebar{
-    width: 260px;
+    width: 280px;
     height: 100%;
     position: fixed;
-    background-color: var(--second-bg);
+    background-color: var(--white);
+    overflow-y: scroll;
 
     .avatar{
       width: 55px;
@@ -24,31 +25,40 @@
     }
     
     a{
-      color: rgb(226, 226, 226);
+      color: rgb(112, 127, 175);
     }
 
     a:hover{
       transform: translateX(5px);
       transition: all 200ms;
-      color: var(--white);
+      color: rgb(112, 127, 175);
+    }
+    button{
+      color: rgb(112, 127, 175);
     }
     button:hover{
       transform: translateX(5px);
       transition: all 200ms;
-      color: var(--white);
+      color: rgb(112, 127, 175);
     }
 
     .active{
       font-weight: 700 !important;
-      color: var(--white);
+      color: var(--second-bg);
     }
   }
 
+  .sidebar::-webkit-scrollbar{
+    width: 0;
+  }
+
   .content{
-    margin-left: 260px;
+    margin-left: 280px;
+    background: #F2F7FF;
+    min-height: 100vh;
 
     .navbar{
-      background: var(--white);
+      background: #F2F7FF;
     }
     .nav-pills .nav-link{
       color: rgb(131, 131, 131);
