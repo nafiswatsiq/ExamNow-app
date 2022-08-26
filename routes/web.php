@@ -68,7 +68,7 @@ Route::middleware(['auth'])->group(function () {
             Route::controller(StudentController::class)->group(function () {
                 Route::get('/', 'index')->name('student.home');
                 Route::get('/class', 'coridorClass')->name('student.coridor-class');
-                // Route::get('/register', 'register')->name('register');
+                Route::get('/exercise', 'exercise')->name('student.exercise');
             });
         });
     });

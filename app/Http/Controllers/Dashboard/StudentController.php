@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class StudentController extends Controller
 {
@@ -15,15 +16,26 @@ class StudentController extends Controller
      */
     public function index()
     {
+        SEOTools::setTitle('Dashboard');
+        
         return view('dashboard.student.home');
     }
 
     public function coridorClass()
     {
+        SEOTools::setTitle('Kelas');
+
         $data = User::where('id', auth()->user()->id)->first();
         $class = $data->classroom->first();
         // dd($class);
         return view('dashboard.student.coridor-class', compact('data', 'class'));
+    }
+
+    public function exercise()
+    {
+        SEOTools::setTitle('Latihan');
+
+        return view('dashboard.student.exercise');
     }
     /**
      * Show the form for creating a new resource.

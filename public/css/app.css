@@ -689,6 +689,13 @@ body.dark-theme .offcanvas .answer-num.answered {
 .dahsboard .content .navbar {
   background: var(--white);
 }
+.dahsboard .content .nav-pills .nav-link {
+  color: rgb(131, 131, 131);
+}
+.dahsboard .content .nav-pills .nav-link.active, .dahsboard .content .nav-pills .show > .nav-link {
+  color: var(--white);
+  background-color: var(--second-bg);
+}
 .dahsboard .card-class {
   overflow: hidden;
   height: 150px;

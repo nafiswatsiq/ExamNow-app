@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  {!! SEO::generate() !!}
+  <link rel="shortcut icon" href="{{ asset('image/logo.png') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   
@@ -42,6 +44,11 @@
         <div class="mt-4">
           <a href="#" class="fw-500 fs-6 fw-semibold d-flex align-items-center">
             <i class="uil uil-clipboard-alt me-2 fs-4"></i> Ujian
+          </a>
+        </div>
+        <div class="mt-4">
+          <a href="{{ route('student.exercise') }}" class="fw-500 fs-6 fw-semibold d-flex align-items-center {{ Route::current()->getName() == 'student.exercise' ? 'active' : '' }}">
+            <i class="uil uil-edit-alt me-2 fs-4"></i> Latihan
           </a>
         </div>
       </div>

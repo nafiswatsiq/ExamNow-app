@@ -50,6 +50,13 @@
     .navbar{
       background: var(--white);
     }
+    .nav-pills .nav-link{
+      color: rgb(131, 131, 131);
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      color: var(--white);
+      background-color: var(--second-bg);
+    }
   }
 
   .card-class{
