@@ -34,8 +34,8 @@
                 <td>:<span class="mx-2 fw-700">{{ $classroom->subjects }}</span></td>
               </tr>
               <tr>
-                <td>Murid</td>
-                <td>:<span class="mx-2 fw-700">50</span></td>
+                <td>Siswa</td>
+                <td>:<span class="mx-2 fw-700">{{ $classroom->user->where('role', 'student')->count() }}</span></td>
               </tr>
               <tr>
                 <td>ID Kelas</td>
