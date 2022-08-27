@@ -739,7 +739,7 @@ body.dark-theme .offcanvas .answer-num.answered {
   background: var(--white);
 }
 .dahsboard.teacher .sidebar a {
-  color: #aaaaaa;
+  color: rgb(112, 127, 175);
 }
 .dahsboard.teacher .sidebar a:hover {
   transform: translateX(5px);
@@ -747,7 +747,7 @@ body.dark-theme .offcanvas .answer-num.answered {
   color: var(--black);
 }
 .dahsboard.teacher .sidebar button {
-  color: #aaaaaa;
+  color: rgb(112, 127, 175);
 }
 .dahsboard.teacher .sidebar button:hover {
   transform: translateX(5px);
@@ -756,7 +756,7 @@ body.dark-theme .offcanvas .answer-num.answered {
 }
 .dahsboard.teacher .sidebar .active {
   font-weight: 700 !important;
-  color: var(--black);
+  color: var(--second-bg);
 }
 .dahsboard.teacher .content {
   background: #FAFAFA;

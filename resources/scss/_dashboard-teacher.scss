@@ -3,7 +3,7 @@
     background: var(--white);
 
     a{
-      color: #aaaaaa;
+      color: rgb(112, 127, 175);
     }
 
     a:hover {
@@ -15,7 +15,7 @@
     }
 
     button{
-      color: #aaaaaa;
+      color: rgb(112, 127, 175);
     }
 
     button:hover{
@@ -28,7 +28,7 @@
 
     .active {
       font-weight: 700 !important;
-      color: var(--black);
+      color: var(--second-bg);
     }
   }
 
