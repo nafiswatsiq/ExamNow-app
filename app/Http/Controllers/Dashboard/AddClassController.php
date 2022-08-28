@@ -17,7 +17,7 @@ class AddClassController extends Controller
         $classroom->subjects    = $request->subjects;
         $classroom->slug        = Str::slug($request->subjects);
         $classroom->classroom   = random_int(1000000, 9999999);
-        // dd($classroom);
+        dd($classroom);
         $classroom->save();
 
         $user_id = auth()->user()->id;
