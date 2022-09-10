@@ -23,7 +23,7 @@
       <p onclick="location.href='/'" class="fw-800 fs-3 second-color pointer">ExamNow</p>
       <div class="row mt-2">
         <div class="avatar rounded-3 col-auto p-0 ms-3">
-          <img src="{{ auth()->user()->getFirstMediaUrl('avatar', 'thumb') }}" onError="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ auth()->user()->name }}&background=fff&color=43a1ff&length=1'" class="rounded-3" width="100px" alt="">
+          <img src="{{ auth()->user()->getFirstMediaUrl('avatar', 'thumb') }}" onError="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ auth()->user()->name }}&background=43a1ff&color=fff&length=1'" class="rounded-3" width="100px" alt="">
         </div>
         <div class="col">
           <p class="fw-700 text-color fs-5 mb-0">{{ auth()->user()->name }}</p>
