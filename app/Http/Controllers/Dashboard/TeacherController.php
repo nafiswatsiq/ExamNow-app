@@ -73,7 +73,10 @@ class TeacherController extends Controller
     {
         SEOTools::setTitle( 'Buat soal' );
 
-        return view('dashboard.teacher.create-question-detail');
+        $data = User::where('id', auth()->user()->id)->first();
+        $class = $data->classroom->sortByDesc('id');
+
+        return view('dashboard.teacher.create-question-detail', compact('class'));
     }
 
     /**

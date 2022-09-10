@@ -17,37 +17,44 @@
 
 <section>
   <div class="container-fluid px-5 my-3 pb-5">
-    <form action="./create-question-details.html" method="post" class="row">
+    <form action="{{ route('create-question-detail') }}" method="post" class="row">
+      @csrf
       <div class="col-6">
         <div class="bg-white px-3 py-4 border shadow-sm rounded-3">
           <h5 class="second-color fw-800">Detail Ujian</h5>
           <div class="row mt-3 gy-3">
             <div class="col-12">
               <label for="" class="form-label fw-700">Jenis ujian/Mata pelajaran<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="" placeholder="Biologi" required>
+              <input type="text" name="title" class="form-control" id="" placeholder="Biologi" required>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Kelas<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="" placeholder="XII-MIPA" required>
+              {{-- <input type="text" class="form-control" id="" placeholder="XII-MIPA" required> --}}
+              <select class="form-select" name="class" aria-label="Default select example">
+                <option selected disabled>Pilih Kelas</option>
+                @foreach ($class as $item)
+                <option value="{{ $item->id }}">{{ $item->subjects }}</option>
+                @endforeach
+              </select>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Guru/Pengajar<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="" placeholder="Ir. Joko Widodo" required value="{{ auth()->user()->name }}">
+              <input type="text" name="teacher" class="form-control" id="" placeholder="Ir. Joko Widodo" required value="">
             </div>
             <div class="col-12">
               <div class="row">
                 <div class="col-6">
                   <label for="" class="form-label fw-700">Tipe soal</label>
-                  <select class="form-select" id="" placeholder="" required>
-                    <option value="">Urut</option>
-                    <option value="">Acak</option>
+                  <select class="form-select" name="question_type" id="" placeholder="" required>
+                    <option value="0">Urut</option>
+                    <option value="1">Acak</option>
                   </select>
                 </div>
                 <div class="col-6">
                   <label for="" class="form-label fw-700">Tampilkan Nilai?</label>
-                  <select class="form-select" id="" placeholder="" required>
-                    <option value="">Ya</option>
-                    <option value="">Tidak</option>
+                  <select class="form-select" name="show_value" id="" placeholder="" required>
+                    <option value="1">Ya</option>
+                    <option value="0">Tidak</option>
                   </select>
                 </div>
               </div>
@@ -62,21 +69,21 @@
             <div class="col-12">
               <label for="" class="form-label fw-700">Durasi waktu ujian<span class="text-danger">*</span></label>
               <div class="input-group">
-                <input type="number" class="form-control" placeholder="120" aria-label="" aria-describedby="basic-addon2" required>
+                <input type="number" name="duration" class="form-control" placeholder="120" aria-label="" aria-describedby="basic-addon2" required>
                 <span class="input-group-text" id="basic-addon2">Menit</span>
               </div>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Ujian dimulai<span class="text-danger">*</span></label>
-              <input type="time" data-field="time" class="form-control" id="" placeholder="waktu mulai" required>
+              <input type="time" name="time_start" data-field="time" class="form-control" id="" placeholder="waktu mulai" required>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Ujian berakhir<span class="text-danger">*</span></label>
-              <input type="time" data-field="time" class="form-control" id="" placeholder="waktu selesai" required>
+              <input type="time" name="time_finish" data-field="time" class="form-control" id="" placeholder="waktu selesai" required>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Tanggal ujian<span class="text-danger">*</span></label>
-              <input type="date" data-field="date" class="form-control" id="" placeholder="tanggal" required>
+              <input type="date" name="date" data-field="date" class="form-control" id="" placeholder="tanggal" required>
               <div id="dtBox"></div>
             </div>
           </div>
@@ -86,11 +93,11 @@
         <div class="row">
           <div class="col-6">
             <h5 class="second-color fw-800">Peraturan</h5>
-            <textarea class="summernote"></textarea>
+            <textarea name="regulation" class="summernote"></textarea>
           </div>
           <div class="col-6">
             <h5 class="second-color fw-800">Tata Tertib</h5>
-            <textarea class="summernote"></textarea>
+            <textarea name="code_of_conduct" class="summernote"></textarea>
           </div>
         </div>
       </div>
