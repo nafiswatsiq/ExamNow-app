@@ -118,27 +118,15 @@
                   </tr>
               </thead>
               <tbody>
+                @foreach ($list_question as $item)
                   <tr>
-                      <td><a href="{{ url('teacher') }}">Matematika</a></td>
-                      <td>XII MIPA 1</td>
+                      <td><a href="{{ url('teacher') }}">{{ $item->title }}</a></td>
+                      <td>{{ $item->classroom->subjects }}</td>
                       <td>50 Soal</td>
-                      <td>2011-04-25</td>
-                      <td>Sri Mulyani</td>
+                      <td>{{ \Carbon\Carbon::parse($item->date)->translatedFormat('d-m-Y'); }}</td>
+                      <td>{{ $item->teacher }}</td>
                   </tr>
-                  <tr>
-                      <td><a href="{{ url('teacher') }}">Ilmu kanuragan</a></td>
-                      <td>XII MIPA 1</td>
-                      <td>50 Soal</td>
-                      <td>2011-07-25</td>
-                      <td>Sandiaga Uno</td>
-                  </tr>
-                  <tr>
-                      <td><a href="{{ url('teacher') }}">Biologi</a></td>
-                      <td>XII MIPA 1</td>
-                      <td>50 Soal</td>
-                      <td>2011-07-25</td>
-                      <td>Sandiaga Uno</td>
-                  </tr>
+                @endforeach
               </tbody>
               <tfoot>
                   <tr>

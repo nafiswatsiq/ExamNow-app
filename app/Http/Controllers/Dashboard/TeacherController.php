@@ -7,6 +7,7 @@ use App\Models\UniqueId;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\QuestionDetail;
 use Illuminate\Support\Facades\Auth;
 use Artesaos\SEOTools\Facades\SEOTools;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -59,7 +60,10 @@ class TeacherController extends Controller
     {
         SEOTools::setTitle( 'Soal' );
 
-        return view('dashboard.teacher.exam');
+        $list_question = QuestionDetail::get();
+        // dd($list_question);
+
+        return view('dashboard.teacher.exam', compact('list_question'));
     }
 
     public function createQuestion()

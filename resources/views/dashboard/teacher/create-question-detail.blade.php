@@ -45,7 +45,7 @@
               <div class="row">
                 <div class="col-6">
                   <label for="" class="form-label fw-700">Tipe soal</label>
-                  <select class="form-select" name="question_type" id="" placeholder="" required>
+                  <select class="form-select" name="sort_questions" id="" placeholder="" required>
                     <option value="0">Urut</option>
                     <option value="1">Acak</option>
                   </select>

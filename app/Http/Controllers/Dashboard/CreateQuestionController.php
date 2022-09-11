@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\QuestionDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class CreateQuestionController extends Controller
 {
@@ -24,17 +25,20 @@ class CreateQuestionController extends Controller
 
         $question = new QuestionDetail();
         $question->title            = $request->title;
-        $question->class            = $request->class;
+        $question->classroom_id     = $request->class;
+        $question->user_id          = auth()->user()->id;
         $question->teacher          = $request->teacher;
-        $question->question_type    = $request->question_type;
+        $question->sort_questions   = $request->sort_questions;
         $question->show_value       = $request->show_value;
         $question->duration         = $request->duration;
         $question->time_start       = $request->time_start;
         $question->time_finish      = $request->time_finish;
-        $question->date             = $request->date;
+        $question->date             = Carbon::parse($request->date)->translatedFormat('Y-m-d');
         $question->regulation       = $request->regulation;
         $question->code_of_conduct  = $request->code_of_conduct;
 
-        dd($question);
+        // dd($question);
+        $question->save();
+        return redirect()->route('teacher.create-question');
     }
 }
