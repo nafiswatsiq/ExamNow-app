@@ -25,7 +25,7 @@
           <div class="row mt-3 gy-3">
             <div class="col-12">
               <label for="" class="form-label fw-700">Jenis ujian/Mata pelajaran<span class="text-danger">*</span></label>
-              <input type="text" name="title" class="form-control" id="" placeholder="Biologi" required>
+              <input type="text" name="title" class="form-control" id="" placeholder="Biologi" autocomplete="off" required>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Kelas<span class="text-danger">*</span></label>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Guru/Pengajar<span class="text-danger">*</span></label>
-              <input type="text" name="teacher" class="form-control" id="" placeholder="Ir. Joko Widodo" required value="">
+              <input type="text" name="teacher" class="form-control" id="" placeholder="Ir. Joko Widodo" autocomplete="off" required value="">
             </div>
             <div class="col-12">
               <div class="row">
@@ -69,21 +69,21 @@
             <div class="col-12">
               <label for="" class="form-label fw-700">Durasi waktu ujian<span class="text-danger">*</span></label>
               <div class="input-group">
-                <input type="number" name="duration" class="form-control" placeholder="120" aria-label="" aria-describedby="basic-addon2" required>
+                <input type="number" name="duration" class="form-control" placeholder="120" aria-label="" aria-describedby="basic-addon2" autocomplete="off" required>
                 <span class="input-group-text" id="basic-addon2">Menit</span>
               </div>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Ujian dimulai<span class="text-danger">*</span></label>
-              <input type="time" name="time_start" data-field="time" class="form-control" id="" placeholder="waktu mulai" required>
+              <input type="time" name="time_start" data-field="time" class="form-control" id="" placeholder="waktu mulai" autocomplete="off" required>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Ujian berakhir<span class="text-danger">*</span></label>
-              <input type="time" name="time_finish" data-field="time" class="form-control" id="" placeholder="waktu selesai" required>
+              <input type="time" name="time_finish" data-field="time" class="form-control" id="" placeholder="waktu selesai" autocomplete="off" required>
             </div>
             <div class="col-12">
               <label for="" class="form-label fw-700">Tanggal ujian<span class="text-danger">*</span></label>
-              <input type="date" name="date" data-field="date" class="form-control" id="" placeholder="tanggal" required>
+              <input type="date" name="date" data-field="date" class="form-control" id="" placeholder="tanggal" autocomplete="off" required>
               <div id="dtBox"></div>
             </div>
           </div>

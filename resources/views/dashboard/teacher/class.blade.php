@@ -63,10 +63,15 @@
                       <td>{{ $item->name }}</td>
                       <td>{{ $item->gender == 'L' ? 'Laki-Laki' : 'Perempuan' }}</td>
                       <td>
-                        <button class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
-                          <i class="uil uil-edit"></i> edit
-                        </button>
-                        <button class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
+                        <form action="{{ url('delete-student') }}" method="post">
+                          @csrf
+                          <button type="button" class="btn bg-second bg-second-hover text-light rounded-pill py-1" data-bs-toggle="modal" data-bs-target="#editStudent">
+                            <i class="uil uil-edit"></i> edit
+                          </button>
+                          <input type="hidden" name="user_id" value="{{ $item->id }}">
+                          <input type="hidden" name="classroom_id" value="{{ $classroom->id }}">
+                          <button type="submit" class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
+                        </form>
                       </td>
                   </tr>
                 @endforeach

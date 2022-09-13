@@ -6,8 +6,9 @@ use App\Models\User;
 use App\Models\UniqueId;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\QuestionDetail;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Artesaos\SEOTools\Facades\SEOTools;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -148,4 +149,17 @@ class TeacherController extends Controller
     {
         //
     }
+    
+    public function destroyStudent(Request $request)
+    {
+        $data = $request->validate([
+            'user_id'       => 'required',
+            'classroom_id'  => 'required',
+        ]);
+
+        DB::table('classroom_user')->where('user_id', $data['user_id'])->delete();
+
+        return redirect()->back();
+    }
+
 }
