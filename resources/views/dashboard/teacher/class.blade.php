@@ -69,7 +69,6 @@
                             <i class="uil uil-edit"></i> edit
                           </button>
                           <input type="hidden" name="user_id" value="{{ $item->id }}">
-                          <input type="hidden" name="classroom_id" value="{{ $classroom->id }}">
                           <button type="submit" class="btn bg-danger text-light rounded-pill py-1"><i class="uil uil-edit"></i> Hapus</button>
                         </form>
                       </td>

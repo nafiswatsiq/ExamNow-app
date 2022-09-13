@@ -154,7 +154,6 @@ class TeacherController extends Controller
     {
         $data = $request->validate([
             'user_id'       => 'required',
-            'classroom_id'  => 'required',
         ]);
 
         DB::table('classroom_user')->where('user_id', $data['user_id'])->delete();
