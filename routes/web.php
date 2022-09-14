@@ -76,5 +76,7 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/exercise', 'exercise')->name('student.exercise');
             });
         });
+
+        Route::post('join-class', [StudentController::class, 'joinClass'])->name('join-class');
     });
 });

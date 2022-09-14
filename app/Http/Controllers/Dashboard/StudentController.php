@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\User;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class StudentController extends Controller
 {
@@ -36,6 +39,23 @@ class StudentController extends Controller
         SEOTools::setTitle('Latihan');
 
         return view('dashboard.student.exercise');
+    }
+
+    public function joinClass(Request $request)
+    {
+        $request->validate([
+            'id_class'          => 'required',
+        ]);
+
+        $user_id = auth()->user()->id;
+        $classroom_id   = Classroom::where('classroom', $request->id_class)->first()->id;
+        
+        DB::table('classroom_user')->insert([
+            'classroom_id' => $classroom_id,
+            'user_id' => $user_id,
+        ]);
+
+        return redirect()->back();
     }
     /**
      * Show the form for creating a new resource.
