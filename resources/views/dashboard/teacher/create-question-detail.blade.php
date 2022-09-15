@@ -3,6 +3,7 @@
 @section('style')
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/datetimepicker@latest/dist/DateTimePicker.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -30,8 +31,7 @@
             <div class="col-12">
               <label for="" class="form-label fw-700">Kelas<span class="text-danger">*</span></label>
               {{-- <input type="text" class="form-control" id="" placeholder="XII-MIPA" required> --}}
-              <select class="form-select" name="class" aria-label="Default select example">
-                <option selected disabled>Pilih Kelas</option>
+              <select class="form-select select2" name="class[]" multiple="multiple" aria-label="Default select example">
                 @foreach ($class as $item)
                 <option value="{{ $item->id }}">{{ $item->subjects }}</option>
                 @endforeach
@@ -114,7 +114,14 @@
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/datetimepicker@latest/dist/DateTimePicker.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.select2').select2({
+      placeholder: 'Pilih kelas',
+    });
+  });
+</script>
 <script>
   $(document).ready(function() {
     $("#dtBox").DateTimePicker();

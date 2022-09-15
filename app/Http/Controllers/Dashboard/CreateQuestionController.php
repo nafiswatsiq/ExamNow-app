@@ -23,22 +23,25 @@ class CreateQuestionController extends Controller
             'code_of_conduct'   => 'required',
         ]);
 
-        $question = new QuestionDetail();
-        $question->title            = $request->title;
-        $question->classroom_id     = $request->class;
-        $question->user_id          = auth()->user()->id;
-        $question->teacher          = $request->teacher;
-        $question->sort_questions   = $request->sort_questions;
-        $question->show_value       = $request->show_value;
-        $question->duration         = $request->duration;
-        $question->time_start       = $request->time_start;
-        $question->time_finish      = $request->time_finish;
-        $question->date             = Carbon::parse($request->date)->translatedFormat('Y-m-d');
-        $question->regulation       = $request->regulation;
-        $question->code_of_conduct  = $request->code_of_conduct;
+        $class = $request->class;
+        foreach ($class as $data_class){
+            $question = new QuestionDetail();
+            $question->title            = $request->title;
+            $question->classroom_id     = $data_class;
+            $question->user_id          = auth()->user()->id;
+            $question->teacher          = $request->teacher;
+            $question->sort_questions   = $request->sort_questions;
+            $question->show_value       = $request->show_value;
+            $question->duration         = $request->duration;
+            $question->time_start       = $request->time_start;
+            $question->time_finish      = $request->time_finish;
+            $question->date             = Carbon::parse($request->date)->translatedFormat('Y-m-d');
+            $question->regulation       = $request->regulation;
+            $question->code_of_conduct  = $request->code_of_conduct;
+    
+            $question->save();
+        }
 
-        // dd($question);
-        $question->save();
         return redirect()->route('teacher.create-question');
     }
 }
