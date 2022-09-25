@@ -381,9 +381,32 @@ a {
   width: fit-content;
   font-size: 80px;
   color: var(--second-bg);
+  transition: all 300ms;
 }
 .register-as .btn-card {
   min-width: 200px;
+  overflow: hidden;
+}
+.register-as .btn-card .p-4 {
+  z-index: 2;
+}
+.register-as .btn-card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--second-bg);
+  position: absolute;
+  transform: translateY(200px);
+  transition: all 300ms;
+}
+.register-as .btn-card:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: translateY(0px);
+}
+.register-as .btn-card:hover .icon, .register-as .btn-card:hover p {
+  color: var(--white) !important;
 }
 
 .register {

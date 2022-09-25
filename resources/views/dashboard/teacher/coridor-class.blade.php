@@ -20,14 +20,14 @@
       </div>
       @foreach ($class as $item)
       <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-12">
-        <a href="{{ url('teacher/class', $item->classroom ) }}" class="card p-4 card-class align-items-end flex-row border-0 shadow-sm rounded-4">
+        <a href="javascript:void(0)" ondblclick="location.href='{{ url('teacher/class', $item->classroom ) }}'" class="card p-4 card-class align-items-end flex-row border-0 shadow-sm rounded-4">
           <div>
             <div>
               <p class="m-0 mt-3 fw-800 second-color fs-4 ">{{ $item->subjects }}</p>
             </div>
             <div class="d-flex align-items-center mt-3">
               <p class="m-0 fw-800 second-color fs-5 ">ID : {{ $item->classroom }}</p>
-              <button class="fs-4 text-black-50 border-0 bg-white ms-2 btn-copy" data-clipboard-text="{{ $item->classroom }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salin">
+              <button class="fs-4 text-black-50 border-0 bg-white ms-2 btn-copy" ondblclick = "alert('Welcome to the javaTpoint.com')" data-clipboard-text="{{ $item->classroom }}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salin">
                 <i class="uil uil-copy"></i>
               </button>
             </div>
