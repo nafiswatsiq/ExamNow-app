@@ -15,12 +15,13 @@ class CreateQuestionDetailsTable extends Migration
     {
         Schema::create('question_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('classroom_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            // $table->foreignId('classroom_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('exam_link_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
             $table->string('teacher');
             $table->boolean('sort_questions');
-            $table->boolean('show_value');
+            $table->boolean('show_grade');
             $table->integer('duration');
             $table->time('time_start');
             $table->time('time_finish');

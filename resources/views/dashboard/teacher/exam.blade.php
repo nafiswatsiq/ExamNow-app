@@ -111,7 +111,7 @@
               <thead class="table-light">
                   <tr>
                       <th>Soal</th>
-                      <th>Kelas</th>
+                      {{-- <th>Kelas</th> --}}
                       <th>Jumlah Soal</th>
                       <th>Tanggal</th>
                       <th>Guru</th>
@@ -120,8 +120,8 @@
               <tbody>
                 @foreach ($list_question as $item)
                   <tr>
-                      <td><a href="{{ url('teacher') }}">{{ $item->title }}</a></td>
-                      <td>{{ $item->classroom->subjects }}</td>
+                      <td><a href="{{ url('teacher/create-question/'. $item->examLink->link .'/1') }}">{{ $item->title }}</a></td>
+                      {{-- <td>{{ $item->classroom->subjects }}</td> --}}
                       <td>50 Soal</td>
                       <td>{{ \Carbon\Carbon::parse($item->date)->translatedFormat('d-m-Y'); }}</td>
                       <td>{{ $item->teacher }}</td>
@@ -131,7 +131,7 @@
               <tfoot>
                   <tr>
                     <th>Soal</th>
-                    <th>Kelas</th>
+                    {{-- <th>Kelas</th> --}}
                     <th>Jumlah Soal</th>
                     <th>Tanggal</th>
                     <th>Guru</th>

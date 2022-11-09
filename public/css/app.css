@@ -527,6 +527,7 @@ a {
 }
 .answer-tab .answer-num {
   cursor: pointer;
+  color: #000;
 }
 .answer-tab .answered {
   background: #96d0ff;

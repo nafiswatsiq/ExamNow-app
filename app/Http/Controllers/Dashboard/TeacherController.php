@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Models\QuestionDetail;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\ExamLink;
+use App\Models\Questions;
 use Illuminate\Support\Facades\Auth;
 use Artesaos\SEOTools\Facades\SEOTools;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -61,17 +63,20 @@ class TeacherController extends Controller
     {
         SEOTools::setTitle( 'Soal' );
 
-        $list_question = QuestionDetail::where('id', auth()->user()->id)->get();
+        $list_question = QuestionDetail::where('user_id', auth()->user()->id)->get();
+        // $test = QuestionDetail::where('id', auth()->user()->id)->find(1);
         // dd($list_question);
 
         return view('dashboard.teacher.exam', compact('list_question'));
     }
 
-    public function createQuestion()
+    public function createQuestion($link, $number)
     {
         SEOTools::setTitle( 'Buat soal' );
+        $id_exam_link = ExamLink::where('link', $link)->first()->id;
+        $list_question = Questions::where('exam_link_id', $id_exam_link)->get();
 
-        return view('dashboard.teacher.create-question');
+        return view('dashboard.teacher.create-question', compact('number', 'link', 'list_question'));
     }
 
     public function createQuestionDetail()

@@ -78,6 +78,7 @@ class AuthController extends Controller
         alert()->success('Berhasil Mendaftar','Silahkan Login')->showConfirmButton('Oke', '#7176FF');
         return redirect('login');
     }
+    
     public function registerStoreStudent(Request $request)
     {
         $data = $request->validate([

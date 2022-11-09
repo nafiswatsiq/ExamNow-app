@@ -28,15 +28,14 @@
               <label for="" class="form-label fw-700">Jenis ujian/Mata pelajaran<span class="text-danger">*</span></label>
               <input type="text" name="title" class="form-control" id="" placeholder="Biologi" autocomplete="off" required>
             </div>
-            <div class="col-12">
+            {{-- <div class="col-12">
               <label for="" class="form-label fw-700">Kelas<span class="text-danger">*</span></label>
-              {{-- <input type="text" class="form-control" id="" placeholder="XII-MIPA" required> --}}
               <select class="form-select select2" name="class[]" multiple="multiple" aria-label="Default select example">
                 @foreach ($class as $item)
                 <option value="{{ $item->id }}">{{ $item->subjects }}</option>
                 @endforeach
               </select>
-            </div>
+            </div> --}}
             <div class="col-12">
               <label for="" class="form-label fw-700">Guru/Pengajar<span class="text-danger">*</span></label>
               <input type="text" name="teacher" class="form-control" id="" placeholder="Ir. Joko Widodo" autocomplete="off" required value="">
@@ -52,7 +51,7 @@
                 </div>
                 <div class="col-6">
                   <label for="" class="form-label fw-700">Tampilkan Nilai?</label>
-                  <select class="form-select" name="show_value" id="" placeholder="" required>
+                  <select class="form-select" name="show_grade" id="" placeholder="" required>
                     <option value="1">Ya</option>
                     <option value="0">Tidak</option>
                   </select>

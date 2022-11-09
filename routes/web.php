@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/class/{class}', 'class')->name('class');
                 Route::get('/exam', 'exam')->name('teacher.exam');
                 Route::get('/teacher', 'teacher')->name('teacher.teacher');
-                Route::get('/create-question', 'createQuestion')->name('teacher.create-question');
+                Route::get('/create-question/{link}/{number}', 'createQuestion')->name('teacher.create-question');
                 Route::get('/create-question-detail', 'createQuestionDetail')->name('teacher.create-question-detail');
             });
         });
@@ -67,6 +67,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('create-question-detail', [CreateQuestionController::class, 'createQuestionDetail'])->name('create-question-detail');
         Route::post('delete-student', [TeacherController::class, 'destroyStudent'])->name('delete-student');
         Route::post('delete-classroom', [TeacherController::class, 'destroyClassroom'])->name('delete-classroom');
+        Route::post('save-question', [CreateQuestionController::class, 'saveQuestion'])->name('save-question');
     });
     
     Route::middleware(['check_auth:student'])->group(function () {

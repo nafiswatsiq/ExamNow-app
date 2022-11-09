@@ -31,4 +31,8 @@ class QuestionDetail extends Model
     public function classroom(){
         return $this->belongsTo(Classroom::class);
     }
+
+    public function examLink(){
+        return $this->belongsTo(ExamLink::class);
+    }
 }

@@ -19,14 +19,15 @@
     <div class="row my-4 position-relative" id="listQuestion">
       <div class="col-9" id="question">
         <div class="card p-4 shadow-sm border-0">
-          <form action="./test.php" method="get" enctype="multipart/form-data">
+          <form action="{{ route('save-question') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="row">
               <div class="col-auto">
-                <p>1.</p>
+                <p>{{ $number }}.</p>
               </div>
               <div class="col focus">
                 <div>
-                  <textarea name="question[]" class="summernote"></textarea>
+                  <textarea name="question" class="summernote"></textarea>
                 </div>
                 <div class="my-4" id="listOption">
                   <ol class="ps-4 list-option">
@@ -34,12 +35,12 @@
                     <li>
                       <div class="d-flex">
                         <div class="col input-option">
-                          <input type="text" name="option[]" id="input-option-a" value="" class="form-control option ms-1 my-1" accept="" required/>
+                          <input type="text" name="option_1" id="input-option-a" value="" class="form-control option ms-1 my-1" accept="" required/>
                           <math-field onchange="mathEdit('a')" id="mathField-a" virtual-keyboard-mode="manual" class="border-bottom" style="display: none"></math-field>
                         </div>
                         <div class="col-auto d-flex align-items-center px-3 gap-3">
                           <div>
-                            <input type="radio" name="true_option[]" value="a" id="option-a" required/>
+                            <input type="radio" name="true_option" value="A" id="option-a" required/>
                             <label for="option-a" class="fs-3 pointer"><i class="uil uil-check"></i></label>
                           </div>
                           <i class="uil uil-image-plus second-color pointer fs-5 toogleImage" onclick="toogleImage(this)" data-bs-toggle="tooltip" data-bs-title="Tambah Gambar"></i>
@@ -51,12 +52,12 @@
                     <li>
                       <div class="d-flex">
                         <div class="col input-option">
-                          <input type="text" name="option[]" id="input-option-b" value="" class="form-control option ms-1 my-1" accept="" required/>
+                          <input type="text" name="option_2" id="input-option-b" value="" class="form-control option ms-1 my-1" accept="" required/>
                           <math-field onchange="mathEdit('b')" id="mathField-b" virtual-keyboard-mode="manual" class="border-bottom" style="display: none"></math-field>
                         </div>
                         <div class="col-auto d-flex align-items-center px-3 gap-3">
                           <div>
-                            <input type="radio" name="true_option[]" value="b" id="option-b" required/>
+                            <input type="radio" name="true_option" value="B" id="option-b" required/>
                             <label for="option-b" class="fs-3 pointer"><i class="uil uil-check"></i></label>
                           </div>
                           <i class="uil uil-image-plus second-color pointer fs-5 toogleImage" onclick="toogleImage(this)" data-bs-toggle="tooltip" data-bs-title="Tambah Gambar"></i>
@@ -68,12 +69,12 @@
                     <li>
                       <div class="d-flex">
                         <div class="col input-option">
-                          <input type="text" name="option[]" id="input-option-c" value="" class="form-control option ms-1 my-1" accept="" required/>
+                          <input type="text" name="option_3" id="input-option-c" value="" class="form-control option ms-1 my-1" accept="" required/>
                           <math-field onchange="mathEdit('c')" id="mathField-c" virtual-keyboard-mode="manual" class="border-bottom" style="display: none"></math-field>
                         </div>
                         <div class="col-auto d-flex align-items-center px-3 gap-3">
                           <div>
-                            <input type="radio" name="true_option[]" value="c" id="option-c" required/>
+                            <input type="radio" name="true_option" value="C" id="option-c" required/>
                             <label for="option-c" class="fs-3 pointer"><i class="uil uil-check"></i></label>
                           </div>
                           <i class="uil uil-image-plus second-color pointer fs-5 toogleImage" onclick="toogleImage(this)" data-bs-toggle="tooltip" data-bs-title="Tambah Gambar"></i>
@@ -85,12 +86,12 @@
                     <li>
                       <div class="d-flex">
                         <div class="col input-option">
-                          <input type="text" name="option[]" id="input-option-d" value="" class="form-control option ms-1 my-1" accept="" required/>
+                          <input type="text" name="option_4" id="input-option-d" value="" class="form-control option ms-1 my-1" accept="" required/>
                           <math-field onchange="mathEdit('d')" id="mathField-d" virtual-keyboard-mode="manual" class="border-bottom" style="display: none"></math-field>
                         </div>
                         <div class="col-auto d-flex align-items-center px-3 gap-3">
                           <div>
-                            <input type="radio" name="true_option[]" value="d" id="option-d" required/>
+                            <input type="radio" name="true_option" value="D" id="option-d" required/>
                             <label for="option-d" class="fs-3 pointer"><i class="uil uil-check"></i></label>
                           </div>
                           <i class="uil uil-image-plus second-color pointer fs-5 toogleImage" onclick="toogleImage(this)" data-bs-toggle="tooltip" data-bs-title="Tambah Gambar"></i>
@@ -102,12 +103,12 @@
                     <li>
                       <div class="d-flex">
                         <div class="col input-option">
-                          <input type="text" name="option[]" id="input-option-e" value="" class="form-control option ms-1 my-1" accept="" required/>
+                          <input type="text" name="option_5" id="input-option-e" value="" class="form-control option ms-1 my-1" accept="" required/>
                           <math-field onchange="mathEdit('e')" id="mathField-e" virtual-keyboard-mode="manual" class="border-bottom" style="display: none"></math-field>
                         </div>
                         <div class="col-auto d-flex align-items-center px-3 gap-3">
                           <div>
-                            <input type="radio" name="true_option[]" value="e" id="option-e" required/>
+                            <input type="radio" name="true_option" value="E" id="option-e" required/>
                             <label for="option-e" class="fs-3 pointer"><i class="uil uil-check"></i></label>
                           </div>
                           <i class="uil uil-image-plus second-color pointer fs-5 toogleImage" onclick="toogleImage(this)" data-bs-toggle="tooltip" data-bs-title="Tambah Gambar"></i>
@@ -121,10 +122,12 @@
                 </div>
                 <!-- <span class="pointer btn-add-option second-color" onclick="addOption()"><i class="uil uil-plus"></i> Tambah Opsi</span> -->
               </div>
+              <input type="hidden" name="path" value="{{ Request::segment(3) }}">
+              <input type="hidden" name="number" value="{{ Request::segment(4) }}">
               <div class="d-flex justify-content-between mt-3">
                 <div>
-                  <button class="btn bg-white text-black-50 fw-700 border border-1 px-3 py-1 rounded-pill bg-second-hover">
-                    Simpan
+                  <button type="submit" class="btn bg-white text-black-50 fw-700 border border-1 px-3 py-1 rounded-pill bg-second-hover">
+                    Selanjutnya
                   </button>
                   <!-- <button type="button" class="btn bg-white border-1 text-black-50 fw-700 border px-3 py-1 rounded-pill bg-second-hover" data-bs-toggle="modal" data-bs-target="#modalAddMath">
                     Tambah Math Field
@@ -146,36 +149,14 @@
           <div class="border border-2 p-3 rounded-3">
             <span class="text-black-50">List nomor:</span>
             <div class="row gap-2 p-3">
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num answered">
+              <a href="1" id="num-1" class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2">
                 1
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                2
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                3
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                4
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                5
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                6
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                7
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                8
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                9
-              </div>
-              <div class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">
-                10
-              </div>
+              </a>
+              @foreach($list_question as $key => $item)
+              <a href="{{ $key + 2 }}" id="num-{{ $key + 2 }}" class="col-auto d-flex align-items-center justify-content-center border border-1 py-1 rounded-2">
+                {{ $key + 2 }}
+              </a>
+              @endforeach
             </div>
           </div>
         </div>
@@ -267,5 +248,7 @@
       }
     });
   });
+
+  $( "#num-{{ Request::segment(4) }}" ).addClass( "active" );
 </script>
 @endsection
