@@ -46,6 +46,12 @@ class StudentController extends Controller
         $request->validate([
             'id_class'          => 'required',
         ]);
+        
+        $get_classroom = Classroom::where('classroom', $request->id_class)->first();
+        if(!$get_classroom){
+            alert()->error('Kelas tidak ditemukan','Silahkan cek kembali id kelas')->showConfirmButton('Oke', '#7176FF');
+            return back()->withInput();
+        }
 
         $user_id = auth()->user()->id;
         $classroom_id   = Classroom::where('classroom', $request->id_class)->first()->id;

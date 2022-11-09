@@ -518,11 +518,21 @@ a {
 
 .answer-tab {
   min-height: 75vh;
+  position: relative;
+}
+.answer-tab #answer-driver {
+  top: 100px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 .answer-tab .answer-num {
   cursor: pointer;
 }
 .answer-tab .answered {
+  background: #96d0ff;
+  color: var(--white);
+}
+.answer-tab .active {
   background: var(--second-bg);
   color: var(--white);
 }
@@ -666,7 +676,10 @@ body.dark-theme .offcanvas .text-black-50 {
 body.dark-theme .offcanvas .answer-num {
   color: #000;
 }
-body.dark-theme .offcanvas .answer-num.answered {
+body.dark-theme .offcanvas .answer-num .answered {
+  color: var(--white);
+}
+body.dark-theme .offcanvas .answer-num .active {
   color: var(--white);
 }
 
@@ -782,7 +795,7 @@ body.dark-theme .offcanvas .answer-num.answered {
   color: var(--second-bg);
 }
 .dahsboard.teacher .content {
-  background: #FAFAFA;
+  background: #f8f7ff;
   min-height: 100vh;
 }
 .dahsboard.teacher .content .navbar {

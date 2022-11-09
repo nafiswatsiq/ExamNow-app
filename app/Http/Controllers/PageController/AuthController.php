@@ -89,6 +89,11 @@ class AuthController extends Controller
             'gender'            => 'required',
         ]);
 
+        $get_classroom = Classroom::where('classroom', $request->id_class)->first();
+        if(!$get_classroom){
+            alert()->error('Kelas tidak ditemukan','Silahkan cek kembali id kelas')->showConfirmButton('Oke', '#7176FF');
+            return back()->withInput();
+        }
         // create user
         $user = new User();
         $user->name     = $request->name;

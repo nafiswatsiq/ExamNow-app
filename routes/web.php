@@ -66,6 +66,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('add-class', [AddClassController::class, 'addClass'])->name('add-class');
         Route::post('create-question-detail', [CreateQuestionController::class, 'createQuestionDetail'])->name('create-question-detail');
         Route::post('delete-student', [TeacherController::class, 'destroyStudent'])->name('delete-student');
+        Route::post('delete-classroom', [TeacherController::class, 'destroyClassroom'])->name('delete-classroom');
     });
     
     Route::middleware(['check_auth:student'])->group(function () {

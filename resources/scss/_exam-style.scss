@@ -25,12 +25,23 @@
 
 .answer-tab {
   min-height: 75vh;
+  position: relative;
+
+  #answer-driver{
+    top: 100px;
+    position: sticky;
+  }
 
   .answer-num {
     cursor: pointer;
   }
 
   .answered {
+    background: #96d0ff;
+    color: var(--white);
+  }
+
+  .active {
     background: var(--second-bg);
     color: var(--white);
   }
@@ -197,8 +208,14 @@ body.dark-theme {
       color: #000;
     }
 
-    .answer-num.answered {
-      color: var(--white);
+    .answer-num{
+
+      .answered {
+        color: var(--white);
+      }
+      .active {
+        color: var(--white);
+      }
     }
   }
 }

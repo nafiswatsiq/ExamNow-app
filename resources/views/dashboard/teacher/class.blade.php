@@ -43,6 +43,15 @@
               </tr>
             </table>
           </div>
+          <div class="col-auto d-flex align-items-end">
+            <div>
+              <form action="{{ route('delete-classroom') }}" method="post">
+                @csrf
+                <input type="hidden" name="classroom_id" value="{{ $classroom->classroom }}">
+                <button type="submit" class="btn bg-danger text-light py-1"><i class="uil uil-edit"></i> Hapus Kelas</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-12 my-5">

@@ -176,11 +176,12 @@
             </div>
           </form>
         </div>
+
         <div class="col-4 answer-tab ps-4 d-none d-lg-block">
           <div class="border border-2 p-3 rounded-3" id="answer-driver">
             <span class="text-black-50">Jawaban:</span>
             <div class="row gap-2 p-3">
-              <div class="col-1 d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num answered">
+              <div class="col-1 d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num answered active">
                 1
               </div>
               <div class="col-1 d-flex align-items-center justify-content-center border border-1 py-1 rounded-2 answer-num">

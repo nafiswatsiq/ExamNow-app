@@ -61,7 +61,7 @@ class TeacherController extends Controller
     {
         SEOTools::setTitle( 'Soal' );
 
-        $list_question = QuestionDetail::get();
+        $list_question = QuestionDetail::where('id', auth()->user()->id)->get();
         // dd($list_question);
 
         return view('dashboard.teacher.exam', compact('list_question'));
@@ -159,6 +159,17 @@ class TeacherController extends Controller
         DB::table('classroom_user')->where('user_id', $data['user_id'])->delete();
 
         return redirect()->back();
+    }
+
+    public function destroyClassroom(Request $request)
+    {
+        $data = $request->validate([
+            'classroom_id'       => 'required',
+        ]);
+
+        DB::table('classrooms')->where('classroom', $data['classroom_id'])->delete();
+
+        return redirect()->route('teacher.coridor-class');
     }
 
 }
