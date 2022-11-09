@@ -795,7 +795,7 @@ body.dark-theme .offcanvas .answer-num .active {
   color: var(--second-bg);
 }
 .dahsboard.teacher .content {
-  background: #f8f7ff;
+  background: #FAFAFA;
   min-height: 100vh;
 }
 .dahsboard.teacher .content .navbar {
