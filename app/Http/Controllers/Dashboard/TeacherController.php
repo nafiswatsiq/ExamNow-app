@@ -64,8 +64,8 @@ class TeacherController extends Controller
         SEOTools::setTitle( 'Soal' );
 
         $list_question = QuestionDetail::where('user_id', auth()->user()->id)->get();
-        // $test = QuestionDetail::where('id', auth()->user()->id)->find(1);
-        // dd($list_question);
+        $test = QuestionDetail::where('id', auth()->user()->id)->find(1);
+        // dd($test->examLink->id);
 
         return view('dashboard.teacher.exam', compact('list_question'));
     }
@@ -75,6 +75,7 @@ class TeacherController extends Controller
         SEOTools::setTitle( 'Buat soal' );
         $id_exam_link = ExamLink::where('link', $link)->first()->id;
         $list_question = Questions::where('exam_link_id', $id_exam_link)->get();
+        // dd($list_question->first());
 
         return view('dashboard.teacher.create-question', compact('number', 'link', 'list_question'));
     }

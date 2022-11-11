@@ -58,7 +58,7 @@
     <h2 class="fw-800 second-color">Macam macam soal</h2>
     <div class="row my-4">
       <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="500">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 shadow" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-4 p-3">
               <img src="{{ asset('image/sbmptn.png') }}" class="img-fluid rounded-start" alt="...">
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="900">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 shadow" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-4 p-3">
               <img src="{{ asset('image/tryout.png') }}" class="img-fluid rounded-start" alt="...">
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="1200">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 shadow" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-4 p-3">
               <img src="{{ asset('image/uas-uts.png') }}" class="img-fluid rounded-start" alt="...">

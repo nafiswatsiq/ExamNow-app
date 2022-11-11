@@ -76,6 +76,7 @@ class CreateQuestionController extends Controller
 
         $question = new Questions();
         $question->exam_link_id = $id_exam_link;
+        $question->no           = $request->number;
         $question->unique       = $unique;
         $question->question     = $request->question;
         $question->true_option  = $request->true_option;

@@ -671,6 +671,9 @@ body.dark-theme .btn-previous-exam {
 body.dark-theme .timer-exam {
   background: #111827;
 }
+body.dark-theme .answer-num {
+  color: var(--white);
+}
 body.dark-theme .offcanvas .text-black-50 {
   color: rgb(112, 112, 112) !important;
 }

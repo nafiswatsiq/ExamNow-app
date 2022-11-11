@@ -16,6 +16,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('exam_link_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('no');
             $table->string('unique');
             $table->text('question');
             $table->string('true_option');
